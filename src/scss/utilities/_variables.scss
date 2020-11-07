@@ -1,7 +1,17 @@
 // COLORS
 $color-primary: #28096e;
 $color-primary-light: #471ca9;
+$color-primary-vlight: #7a45f0;
 $color-primary-dark: #160934;
+
+// $color-bg: #a699c4;
+$color-bg: #8752ff;
+
+$color-bg-dark: #8165c1;
 
 // FONT
 $default-font-size: 1.6rem;
+
+//BORDER
+$border-double: 5px double $color-primary-dark;
+$border-primary: 3px solid $color-primary-dark;

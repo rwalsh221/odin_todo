@@ -1,4 +1,46 @@
-.grid__header {
+.header {
   grid-area: header;
-  background-color: palevioletred;
+  background-color: $color-bg;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: $border-primary;
+
+  &__dash {
+    background-color: $color-primary-dark;
+    padding: 0.5rem 5rem;
+
+    position: relative;
+  }
+
+  &__dash:after {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    border: $border-double;
+  }
+}
+
+.main-heading {
+  display: inline-block;
+  border: $border-double;
+  padding: 1rem 2rem;
+}
+
+.header-icon {
+  display: flex;
+  width: 20rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: $border-double;
+  &__icon {
+    width: 5rem;
+    height: 5rem;
+    // filter: invert(12%) sepia(55%) saturate(5217%) hue-rotate(256deg)
+    // brightness(72%) contrast(112%);
+  }
 }

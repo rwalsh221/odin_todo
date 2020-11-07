@@ -1,4 +1,15 @@
-.grid__main {
+.main {
   grid-area: main;
-  background-color: rebeccapurple;
+  // background-color: rebeccapurple;
+  // background: repeating-linear-gradient(
+  //   45deg,
+  //   $color-primary-dark 0%,
+  //   $color-primary 15%,
+  //   $color-primary-light 60%
+  // );
+  background: radial-gradient(
+    circle farthest-side at center center,
+    $color-primary 0%,
+    $color-primary-light 50%
+  );
 }
