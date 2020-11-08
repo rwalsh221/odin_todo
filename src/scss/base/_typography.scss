@@ -1,10 +1,29 @@
 body {
   font-family: "ubuntu", "sans-serif";
+  color: $color-primary;
+  font-size: $default-font-size;
 }
 
 .heading-primary {
-  font-family: "Big Shoulders Stencil Text", cursive;
+  font-family: $heading-font;
   font-weight: 700;
   font-size: 8rem;
+  color: $color-primary-dark;
+}
+
+.heading-tertiary {
+  font-family: $heading-font;
+  font-size: 5rem;
+  color: $color-primary-dark;
+}
+
+.heading-description {
+  font-style: italic;
+  font-size: 2rem;
+}
+
+.btn {
+  font-size: 4rem;
+  font-family: $heading-font;
   color: $color-primary-dark;
 }

@@ -1,0 +1,76 @@
+.todo-card {
+  flex-basis: 45%;
+  background-color: $color-bg;
+  padding: 5rem 2rem 0 2rem;
+  border: $border-primary;
+  box-shadow: $shadow-primary;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+
+  * {
+    align-self: center;
+    margin-bottom: 2rem;
+    width: max-content;
+    // border: $border-double;
+  }
+
+  &__heading {
+    border: $border-double;
+    padding: 0.5rem;
+    // margin-top: 2rem;
+  }
+
+  &__description {
+    border: $border-double;
+    padding: 0.5rem;
+  }
+
+  &__due-date {
+    align-self: center;
+    font-size: 3rem;
+    border: $border-double;
+    padding: 0.5rem;
+  }
+
+  &__collapse {
+    width: 106.2%;
+    margin-bottom: 0;
+    border: $border-primary;
+    border-bottom: none;
+    background-color: $color-primary;
+    // padding: 1rem 0;
+
+    &:hover {
+      background-color: orangered;
+    }
+  }
+
+  &__notes {
+    align-self: flex-start;
+    margin-left: 2rem;
+    width: 90%;
+    border: $border-double;
+    padding: 0.5rem;
+    background-color: $color-primary;
+    color: $color-bg;
+    display: none;
+  }
+
+  &__checklist {
+    // list-style: disc;
+    align-self: flex-start;
+    margin-left: 2rem;
+    padding: 0.5rem;
+    width: 90%;
+    border: $border-double;
+    background-color: $color-primary;
+    color: $color-bg;
+    display: none;
+
+    &--item {
+      margin-left: 2rem;
+    }
+  }
+}
