@@ -7,7 +7,10 @@
 
   display: flex;
   flex-direction: column;
-  margin-bottom: 5rem;
+  margin: 2.5rem 0;
+  // overflow: hidden;
+  height: max-content;
+  // flex-basis: 75rem;
 
   * {
     align-self: center;
@@ -34,28 +37,22 @@
     padding: 0.5rem;
   }
 
-  &__collapse {
-    width: 106.2%;
-    margin-bottom: 0;
-    border: $border-primary;
-    border-bottom: none;
-    background-color: $color-primary;
-    // padding: 1rem 0;
-
-    &:hover {
-      background-color: orangered;
-    }
+  &__notes,
+  &__checklist {
+    overflow: hidden;
+    transition: ease-in 0.2s;
+    display: none;
   }
 
   &__notes {
     align-self: flex-start;
+    margin-top: 1rem;
     margin-left: 2rem;
     width: 90%;
     border: $border-double;
     padding: 0.5rem;
     background-color: $color-primary;
     color: $color-bg;
-    display: none;
   }
 
   &__checklist {
@@ -67,10 +64,24 @@
     border: $border-double;
     background-color: $color-primary;
     color: $color-bg;
-    display: none;
 
     &--item {
       margin-left: 2rem;
     }
+  }
+}
+
+.btn__collapse {
+  width: 106.2%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border: $border-primary;
+  border-bottom: none;
+  background-color: $color-primary;
+  // padding: 1rem 0;
+  // order: 1;
+
+  &:hover {
+    background-color: orangered;
   }
 }
