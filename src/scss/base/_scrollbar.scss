@@ -9,6 +9,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: $color-primary;
+  background-color: $color-primary-vlight;
   outline: 1px solid $color-primary-dark;
+  // border-radius: 2rem;
 }
