@@ -1,7 +1,7 @@
 .todo-card {
   flex-basis: 49%;
   background-color: $color-bg;
-  padding: 5rem 2rem 0 2rem;
+  padding: 0rem 2rem 0 2rem;
   border: $border-primary;
   box-shadow: $shadow-primary;
 
@@ -11,6 +11,7 @@
   overflow: hidden;
   transition: height ease-in 0.2s;
   height: 34.7rem;
+  // justify-content: flex-start;
   // flex-grow: 0;
 
   * {
@@ -97,4 +98,13 @@
   &:hover {
     background-color: orangered;
   }
+}
+
+.overdue {
+  justify-self: flex-start;
+  background-color: orangered;
+  width: 106.2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

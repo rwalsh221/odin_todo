@@ -1,4 +1,4 @@
-import CardIdFactory from './card_id_factory'
+import CardIdFactory from './card_id_factory';
 
 const collapseTodo = (event) => {
     const newCardId = CardIdFactory(event)
