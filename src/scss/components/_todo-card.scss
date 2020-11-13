@@ -1,7 +1,7 @@
 .todo-card {
-  flex-basis: 49%;
+  flex-basis: 42%;
   background-color: $color-bg;
-  padding: 0rem 2rem 0 2rem;
+  // padding: 0rem 2rem 0 2rem;
   border: $border-primary;
   box-shadow: $shadow-primary;
 
@@ -33,6 +33,7 @@
   &__description {
     border: $border-double;
     padding: 0.5rem;
+    width: 95%;
     order: 2;
   }
 
@@ -52,9 +53,9 @@
   }
 
   &__notes {
-    align-self: flex-start;
+    // align-self: flex-start;
     margin-top: 1rem;
-    margin-left: 2rem;
+    // margin-left: 2rem;
     width: 90%;
     border: $border-double;
     padding: 0.5rem;
@@ -67,8 +68,8 @@
 
   &__checklist {
     // list-style: disc;
-    align-self: flex-start;
-    margin-left: 2rem;
+    // align-self: flex-start;
+    // margin-left: 2rem;
     padding: 0.5rem;
     width: 90%;
     border: $border-double;
@@ -93,17 +94,18 @@
   background-color: $color-primary;
   // padding: 1rem 0;
   order: 4;
-  // transition: order ease-in 3s;
+  transition: order ease-in 0.3s;
 
   &:hover {
     background-color: orangered;
   }
 }
 
-.overdue {
+.overdue,
+.complete {
   justify-self: flex-start;
   background-color: orangered;
-  width: 106.2%;
+  width: 42%;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,3 +1,6 @@
+import format from 'date-fns/format'
+
+
 const sortArray = (arr) => {
      
     // 1, Sort array by date
@@ -12,4 +15,20 @@ const sortArray = (arr) => {
         return b.priority-a.priority});
 }
 
-export { sortArray }
+const parseNumArr = (arr) => {
+    
+    
+    const parsedArr =[]
+
+    for(let i = 0; i < arr.length; i++) {
+        parsedArr.push(parseInt(arr[i]));
+    }
+    return parsedArr;
+}
+
+const newDate = (y, m, d) => {
+    return format(new Date(y, m, d), 'dd/MM/yyyy')
+    
+}
+
+export { sortArray, parseNumArr, newDate }
