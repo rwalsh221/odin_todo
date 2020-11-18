@@ -14,6 +14,9 @@
     </head>
 
     <body class="main__grid">
+
+        
+
         <header class="header">
             <div class="header-icon">
                 <img src="./assets/icon/icons8-shopping-basket-96.png" alt="header icon" class="header-icon__icon">
@@ -37,6 +40,40 @@
                 <img src="./assets/icon/icons8-working-with-a-laptop-96.png" alt="header icon" class="header-icon__icon">
             </div>
         </header>
+
+        <section class="form-popup">
+            
+            <input type="checkbox" class="form-popup__checkbox" id="form-toggle">
+
+            <label for="form-toggle" class="form-popup__button"></label>
+
+            <div class="form-popup__background">&nbsp;</div>
+            
+            <div class="form-popup__form">
+                <div class="todo-form">
+                    <form class="todo-form__container">
+                        <label for="todo-form__title">Title:</label><br>
+                        <input type="text" id="todo-form__title" name="todo-form__title"><br>
+                        <label for="todo-form__description">Description:</label><br>
+                        <input type="text" id="todo-form__description" name="todo-form__description"><br>
+                        <label for="todo-form_due-date">Due Date:</label><br>
+                        <input type="date" id="todo-form_due-date" name="todo-form_due-date"><br>
+                        <label for="todo-form_notes">Notes:</label><br>
+                        <textarea name="todo-form_notes" id="todo-form_notes" cols="30" rows="9"></textarea>
+                        <label for="todo-form_checklist">Steps:</label><br>
+                        <input type="text" id="todo-form_checklist" name="todo-form_checklist"><br>
+                        <button class="btn btn__checklist">Add step</button><br>
+                        
+                    </form>
+                    <button type="button" class="todo-form__btn btn btn__submit">Create new ToDo</button>
+            </div>
+            
+                
+            </div>
+        </section>
+        
+            
+         
         
         <main class="main">
             <section class="section-todo" id="section-todo">

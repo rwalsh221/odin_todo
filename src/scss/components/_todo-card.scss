@@ -85,22 +85,6 @@
   }
 }
 
-.btn__collapse {
-  width: 106.2%;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border: $border-primary;
-  border-bottom: none;
-  background-color: $color-primary;
-  // padding: 1rem 0;
-  order: 4;
-  transition: order ease-in 0.3s;
-
-  &:hover {
-    background-color: orangered;
-  }
-}
-
 .overdue,
 .complete {
   justify-self: flex-start;

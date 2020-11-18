@@ -1,0 +1,20 @@
+.btn {
+  border: $border-primary;
+  background-color: $color-primary;
+}
+
+.btn__collapse {
+  width: 106.2%;
+  margin-bottom: 0;
+  padding-bottom: 0;
+
+  border-bottom: none;
+
+  // padding: 1rem 0;
+  order: 4;
+  transition: order ease-in 0.3s;
+
+  &:hover {
+    background-color: orangered;
+  }
+}

@@ -1,0 +1,13 @@
+input,
+textarea {
+  width: 100%;
+  font-size: 2rem;
+  border: $border-double;
+  background-color: $color-primary;
+  color: $color-primary-vlight;
+
+  &:focus {
+    outline: none;
+    border: $border-double-focus;
+  }
+}

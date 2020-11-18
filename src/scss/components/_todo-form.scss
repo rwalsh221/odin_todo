@@ -1,0 +1,37 @@
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  height: 80vh;
+  border: $border-double;
+  background-color: $color-primary-light;
+  font-size: 2.5rem;
+  text-decoration: underline;
+  box-shadow: $shadow-primary;
+
+  * {
+    margin-bottom: 1rem;
+  }
+
+  &__container {
+    margin-top: 2rem;
+    height: 80%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    line-height: 1rem;
+    background-color: $color-primary-vlight;
+    border: $border-primary;
+    box-shadow: $shadow-primary;
+    padding: 2rem;
+
+    & > label {
+      align-self: center;
+    }
+  }
+
+  &__btn {
+    margin-top: 4rem;
+  }
+}
