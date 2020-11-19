@@ -41,7 +41,7 @@
             </div>
         </header>
 
-        <section class="form-popup">
+        <section class="form-popup" id="section-popup">
             
             <input type="checkbox" class="form-popup__checkbox" id="form-toggle">
 
@@ -49,24 +49,29 @@
 
             <div class="form-popup__background">&nbsp;</div>
             
-            <div class="form-popup__form">
-                <div class="todo-form">
+            <div class="form-popup__form" id="form-popup__form">
+                <div class="todo-form" id="todo-form">
                     <form class="todo-form__container">
                         <label for="todo-form__title">Title:</label><br>
                         <input type="text" id="todo-form__title" name="todo-form__title"><br>
+                        
                         <label for="todo-form__description">Description:</label><br>
                         <input type="text" id="todo-form__description" name="todo-form__description"><br>
-                        <label for="todo-form_due-date">Due Date:</label><br>
-                        <input type="date" id="todo-form_due-date" name="todo-form_due-date"><br>
-                        <label for="todo-form_notes">Notes:</label><br>
-                        <textarea name="todo-form_notes" id="todo-form_notes" cols="30" rows="9"></textarea>
-                        <label for="todo-form_checklist">Steps:</label><br>
-                        <input type="text" id="todo-form_checklist" name="todo-form_checklist"><br>
+                        
+                        <label for="todo-form__due-date">Due Date:</label><br>
+                        <input type="date" id="todo-form__due-date" name="todo-form__due-date"><br>
+                        
+                        <label for="todo-form__notes">Notes:</label><br>
+                        <textarea name="todo-form__notes" id="todo-form__notes" cols="30" rows="9"></textarea>
+                        
+                        <label for="todo-form__checklist">Steps:</label><br>
+                        <input type="text" id="todo-form__checklist" name="todo-form__checklist"><br>
+                        
                         <button class="btn btn__checklist">Add step</button><br>
                         
                     </form>
-                    <button type="button" class="todo-form__btn btn btn__submit">Create new ToDo</button>
-            </div>
+                    <button type="button" class="todo-form__btn btn btn__submit" id="form-submit">Create new ToDo</button>
+                </div>
             
                 
             </div>
