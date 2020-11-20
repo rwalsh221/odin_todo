@@ -42,10 +42,10 @@ const cardIdFactory = (event) => {
     const eventClass = event.target.className
 
     const splitEventId = eventId.split('$')
-    // console.log(splitEventId)
+    console.log(splitEventId)
 
-    const cardId = parseInt(splitEventId[1]);
-    // console.log(cardId)
+    const cardId = splitEventId[1];
+    console.log(cardId)
     return {cardId, eventClass, eventId}
   }
 

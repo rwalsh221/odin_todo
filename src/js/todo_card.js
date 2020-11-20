@@ -5,6 +5,7 @@ import { cardIdFactory, todoFactory } from './factory';
 const collapseTodo = (event) => {
     const newCardId = cardIdFactory(event)
     console.log(event.target.id)
+    console.log(newCardId)
     if (newCardId.eventClass.includes('btn__collapse')) {
       const todoNotes = document.getElementById(`notes-$${newCardId.cardId}`);
       const todoChecklist = document.getElementById(`checklist-$${newCardId.cardId}`);

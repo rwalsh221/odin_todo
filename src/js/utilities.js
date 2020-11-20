@@ -31,4 +31,15 @@ const newDate = (y, m, d) => {
     
 }
 
-export { sortArray, parseNumArr, newDate }
+const removeChild = (element) => {
+    const selector = document.querySelector(`.${element}`)
+
+    if (selector.hasChildNodes) {
+        while(selector.firstChild) {
+            selector.removeChild(selector.lastChild);
+        }
+    }
+
+   
+}
+export { sortArray, parseNumArr, newDate, removeChild }
