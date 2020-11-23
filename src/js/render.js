@@ -110,7 +110,7 @@ const generateTodoCardHtml = (value, index) => {
     // console.log(todoObjectArr[index].dueDate)
     // console.log(parsedDate[2] - 1)
     // console.log(isFuture(new Date(overdue[2], overdue[1] - 1, overdue[0])))
-    console.log('todoarr position')
+    console.log('todoarr position***************************')
     console.log(todoArr[0])
 
 
