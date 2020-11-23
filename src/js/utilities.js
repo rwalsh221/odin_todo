@@ -42,4 +42,21 @@ const removeChild = (element) => {
 
    
 }
-export { sortArray, parseNumArr, newDate, removeChild }
+
+const idIndex = (arr, elementId) => {
+
+   
+
+    let idArr = []
+
+    for (let i = 0; i < arr.length; i++) {
+    
+        
+        idArr.push(arr[i].id)
+    };
+
+    let idIndex = idArr.indexOf(elementId)
+    
+    return idIndex;
+}
+export { sortArray, parseNumArr, newDate, removeChild, idIndex }

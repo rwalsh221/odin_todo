@@ -68,6 +68,8 @@ const generateTodoCardHtml = (value, index) => {
                         <h4 class="todo-card__description heading-description">${todoArr[index].description}</h4>
                         <p class="todo-card__due-date">Due: <span class="todo-card__date-content">${todoArr[index].dueDate}</span></p>
                         <button type="button" class="btn btn__collapse" id="btn__collapse-$${todoArr[index].id}">tO.dO</button>
+                        <button type="button" class="btn btn__delete" id="btn__delete-$${todoArr[index].id}">delete</button>
+                        <button type="button" class="btn btn__complete" id="btn__complete-$${todoArr[index].id}">complete</button>
                         <p class="todo-card__notes" id="notes-$${todoArr[index].id}">${todoArr[index].notes}</p>
                         <ul class="todo-card__checklist" id="checklist-$${todoArr[index].id}">
                             <li class="todo-card__checklist--item">Lorem ipsum dolor sit.</li>
@@ -108,6 +110,10 @@ const generateTodoCardHtml = (value, index) => {
     // console.log(todoObjectArr[index].dueDate)
     // console.log(parsedDate[2] - 1)
     // console.log(isFuture(new Date(overdue[2], overdue[1] - 1, overdue[0])))
+    console.log('todoarr position')
+    console.log(todoArr[0])
+
+
 }
 
 
