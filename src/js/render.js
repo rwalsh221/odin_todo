@@ -71,28 +71,15 @@ const generateTodoCardHtml = (value, index) => {
                         <button type="button" class="btn btn__delete" id="btn__delete-$${todoArr[index].id}">delete</button>
                         <button type="button" class="btn btn__complete" id="btn__complete-$${todoArr[index].id}">complete</button>
                         <p class="todo-card__notes" id="notes-$${todoArr[index].id}">${todoArr[index].notes}</p>
-                        <ul class="todo-card__checklist" id="checklist-$${todoArr[index].id}">
-                            <li class="todo-card__checklist--item">Lorem ipsum dolor sit.</li>
-                            <li class="todo-card__checklist--item">Lorem ipsum dolor sit amet.</li>
-                            <li class="todo-card__checklist--item">Lorem ipsum dolor sit amet.</li>
-                            <li class="todo-card__checklist--item">Lorem ipsum dolor sit amet.</li>
-                            <li class="todo-card__checklist--item">Lorem ipsum dolor sit amet.</li>
-                        </ul>
+                        
                     </div>`
 
+    
     const overdueHtml = `<div class="overdue"><h5 class="heading-overdue">ToDo Overdue</h5></div>`
 
     const completeHtml = `<div class="complete"><h5 class="heading-complete">ToDo Complete</h5></div>`
 
-    document.getElementById('section-todo').insertAdjacentHTML("beforeend", todoHTML);
-
-    // const dateArr = todoObjectArr[index].dueDate.split('/')
-    // const parsedDate =[]
-
-    // for(let i = 0; i < dateArr.length; i++) {
-    //     parsedDate.push(parseInt(dateArr[i]));
-    //     console.log(parsedDate)
-    // }
+    // document.getElementById('section-todo').insertAdjacentHTML("beforeend", todoHTML);
 
     const dateArr = todoArr[index].dueDate.split('/')
 
@@ -105,6 +92,28 @@ const generateTodoCardHtml = (value, index) => {
     if(todoArr[index].complete === true) {
         document.getElementById(`todo-card-$${todoArr[index].id}`).insertAdjacentHTML('afterbegin', completeHtml);
     }
+    
+    // creates li elements for checklist
+    let checklistHtml
+    if(todoArr[index].checklist.length > 0) {
+        // array with ul skeleton
+        let htmlArray = [`<ul class="todo-card__checklist" id="checklist-$${todoArr[index].id}">`, `</ul>`]
+        // push checklist steps into html array from todo object
+        for (let i = 0; i < todoArr[index].checklist.length; i++) {
+            htmlArray.splice(1, 0, `<li class="todo-card__checklist--item">${todoArr[index].checklist[i].step}</li>`)
+        }
+        // convert htmlArray to string
+        checklistHtml = htmlArray.join('')
+        
+    }
+        // insert html for todo card 
+        document.getElementById('section-todo').insertAdjacentHTML("beforeend", todoHTML);
+        //insert html for checklist
+        document.getElementById(`todo-card-$${todoArr[index].id}`).insertAdjacentHTML("beforeend", checklistHtml);
+
+
+    
+    
     // console.log(dateArr)
     // console.log(overdue);
     // console.log(todoObjectArr[index].dueDate)
@@ -112,18 +121,24 @@ const generateTodoCardHtml = (value, index) => {
     // console.log(isFuture(new Date(overdue[2], overdue[1] - 1, overdue[0])))
     console.log('todoarr position***************************')
     console.log(todoArr[0])
+    console.log(todoArr)
+    console.log(document.querySelectorAll('.checklist').length)
 
 
+    // create array to add steps to the html.
+    // [<ul class="todo-card__checklist" id="checklist-$${todoArr[index].id}">, push li of steps here, <li class="todo-card__checklist--item">Lorem ipsum dolor sit.</li>, </ul>]
 }
 
 
-
+const test = () => {
+    console.log('test')
+}
 
 
 const renderTodoCard = () => {
     // change to for loop not foreach
     sortArray(todoArr);
-    todoArr.forEach(generateTodoCardHtml)
+    todoArr.forEach(generateTodoCardHtml, test())
     // console.log(todoObjectArr)
 }
 

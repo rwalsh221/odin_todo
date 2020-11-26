@@ -59,4 +59,8 @@ const idIndex = (arr, elementId) => {
     
     return idIndex;
 }
+
+const newId = () => {
+    
+}
 export { sortArray, parseNumArr, newDate, removeChild, idIndex }
