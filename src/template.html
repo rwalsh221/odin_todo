@@ -53,13 +53,13 @@
                 <div class="todo-form" id="todo-form">
                     <form class="todo-form__container">
                         <label for="todo-form__title">Title:</label><br>
-                        <input type="text" id="todo-form__title" name="todo-form__title"><br>
+                        <input type="text" id="todo-form__title" name="todo-form__title" required><br>
                         
                         <label for="todo-form__description">Description:</label><br>
                         <input type="text" id="todo-form__description" name="todo-form__description"><br>
                         
                         <label for="todo-form__due-date">Due Date:</label><br>
-                        <input type="date" id="todo-form__due-date" name="todo-form__due-date"><br>
+                        <input type="date" id="todo-form__due-date" name="todo-form__due-date" required><br>
                         
                         <label for="todo-form__notes">Notes:</label><br>
                         <textarea name="todo-form__notes" id="todo-form__notes" cols="30" rows="9"></textarea>
@@ -67,12 +67,20 @@
                         <label for="todo-form__checklist">Steps:</label><br>
                         <input type="text" id="todo-form__checklist" name="todo-form__checklist"><br>
                         
+                        <!-- add project radio button -->
+                        <p>Please select your project:</p>
+                        <input type="radio" id="todo-form__default" name="project" value="default">
+                        <label for="todo-form__default">Default</label><br>
+                        <input type="radio" id="todo-form__new" name="project" value="new-project">
+                        <label for="todo-form__new">New Project</label>
+                        <input type="text" id="todo-form__new" name="project" value=""><br>
                         
                         
                     </form>
+                    <button type="submit" class="todo-form__btn btn btn__submit" id="form-submit">Create new ToDo</button>
                     <div class="checklist" id="checklist"></div>
                     <button class="btn btn__checklist" id="checklist-btn">Add step</button><br>
-                    <button type="button" class="todo-form__btn btn btn__submit" id="form-submit">Create new ToDo</button>
+                    
                 </div>
             
                 
