@@ -51,7 +51,7 @@
             
             <div class="form-popup__form" id="form-popup__form">
                 <div class="todo-form" id="todo-form">
-                    <form class="todo-form__container">
+                    <form class="todo-form__container" id="todo-form__container">
                         <label for="todo-form__title">Title:</label><br>
                         <input type="text" id="todo-form__title" name="todo-form__title" required><br>
                         
@@ -68,12 +68,18 @@
                         <input type="text" id="todo-form__checklist" name="todo-form__checklist"><br>
                         
                         <!-- add project radio button -->
-                        <p>Please select your project:</p>
-                        <input type="radio" id="todo-form__default" name="project" value="default">
-                        <label for="todo-form__default">Default</label><br>
-                        <input type="radio" id="todo-form__new" name="project" value="new-project">
-                        <label for="todo-form__new">New Project</label>
-                        <input type="text" id="todo-form__new" name="project" value=""><br>
+                        
+                        <div id="form__radio" class="form__radio">
+                            
+                        </div>
+                           
+                    
+                         <!-- <p>Please select your project:</p>
+                            <input type="radio" id="todo-form__default" name="project" value="default">
+                            <label for="todo-form__default">Default</label><br>
+                            <input type="radio" id="todo-form__new" name="project" value="new-project">
+                            <label for="todo-form__new">New Project</label>
+                            <input type="text" id="todo-form__new" name="project" value=""><br> -->
                         
                         
                     </form>

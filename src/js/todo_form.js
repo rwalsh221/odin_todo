@@ -10,17 +10,33 @@ import renderTodoCard from './render';
 let todoArr = []
 
 const submitForm = (event) => {
-    let title, description, dueDate, priority, notes
-    const checkList = document.getElementById('checklist')
+    let title, description, dueDate, priority, notes, checkList, project
+    
+    const radioChild = document.getElementById('form__radio')
     
     title = document.getElementById('todo-form__title').value;
     description = document.getElementById('todo-form__description').value;
     dueDate = document.getElementById('todo-form__due-date').value;
     priority = 4;
     notes = document.getElementById('todo-form__notes').value;
+    checkList = document.getElementById('checklist');
+    
+    
+    if (radioChild.hasChildNodes()){
+        console.log(radioChild.childNodes)
+        radioChild.childNodes.forEach( function(element) {
+            if (element.type === 'radio' && element.id === 'todo-form__new' && element.checked === true) {
+                project = document.getElementById('todo-form__new--text').value
+            } else if (element.type === 'radio' && element.checked === true) {
+                project = document.getElementById(element.id).value
+            } 
+        })}
 
-    todoArr.push(todoFactory(title, description, dueDate, priority, notes, checkList))
+
+    todoArr.push(todoFactory(title, description, dueDate, priority, notes, checkList, project))
     removeChild('section-todo')
+    
+
     renderTodoCard();
 }
 

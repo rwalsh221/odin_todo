@@ -1,14 +1,15 @@
 .todo-form {
   display: flex;
-  flex-direction: column;
+  // flex-direction: column;
   align-items: center;
   width: 50%;
-  height: 80vh;
+  height: max-content;
   border: $border-double;
   background-color: $color-primary-light;
   font-size: 2.5rem;
   text-decoration: underline;
   box-shadow: $shadow-primary;
+  z-index: 5000;
 
   * {
     margin-bottom: 1rem;
@@ -16,7 +17,7 @@
 
   &__container {
     margin-top: 2rem;
-    height: 80%;
+    height: 90%;
     width: 80%;
     display: flex;
     flex-direction: column;

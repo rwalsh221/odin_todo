@@ -11,7 +11,7 @@ import { getMonth } from 'date-fns'
 
 //  2018-07-22
 
-const todoFactory = (title, description, dateDue, priority, notes, stepElement) => {
+const todoFactory = (title, description, dateDue, priority, notes, checklistElement, project) => {
   
   // generates id form html class/id
   const id = nanoid()
@@ -23,11 +23,10 @@ const todoFactory = (title, description, dateDue, priority, notes, stepElement) 
   
   let complete = false
   let checklist = []
-  if (stepElement.hasChildNodes()){
-      stepElement.childNodes.forEach( function(value) {
+  if (checklistElement.hasChildNodes()){
+      checklistElement.childNodes.forEach( function(value) {
       checklist.push({step: value.textContent,
       complete: false})
-      console.log(true)
       })}
   
 
@@ -39,7 +38,7 @@ const todoFactory = (title, description, dateDue, priority, notes, stepElement) 
 
     
   }
-  return {id, title, description, dueDate, priority, notes, checklist, complete, completeDate}
+  return {id, title, description, dueDate, priority, notes, checklist, complete, completeDate, project}
 }
 
 const cardIdFactory = (event) => {

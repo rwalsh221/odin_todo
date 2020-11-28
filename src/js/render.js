@@ -1,6 +1,6 @@
 import compareAsc  from 'date-fns/compareAsc'
 import format from 'date-fns/format'
-import { sortArray, parseNumArr, newDate } from './utilities.js'
+import { sortArray, parseNumArr, newDate, getProject, removeChild } from './utilities.js'
 import isFuture from 'date-fns/isFuture'
 import {todoArr} from './todo_form'
 
@@ -74,13 +74,27 @@ const generateTodoCardHtml = (value, index) => {
 
 
 // render changes to todo form if a new project is added
-const renderTodoForm = (value, index) => {
-    
+const renderTodoForm = () => {
+    let htmlArray = ['<p>Please select your project:</p>', `<input type="radio" id="todo-form__default" name="project" value="default">`, '<label for="todo-form__default">Default</label><br></br>',
+`<input type="radio" id="todo-form__new" name="project" value="new-project">`, `<label for="todo-form__new">New Project</label>`, `<input type="text" id="todo-form__new--text" name="project" value=""><br></br>`]
+
+    let projectArr = getProject(todoArr)
+    for( let i = 0; i < projectArr.length; i++) {
+        htmlArray.splice(3, 0, `<input type="radio" id="todo-form__${projectArr[i]}" name="project" value="${projectArr[i]}">`, `<label for="todo-form__${projectArr[i]}">${projectArr[i]}</label><br></br>`) 
+    }
+
+    let formHtml = htmlArray.join('');
+    document.getElementById('form__radio').insertAdjacentHTML("beforeend", formHtml);
 }
 const renderTodoCard = () => {
     // sorts array by date and then priority to display on ui
     sortArray(todoArr);
-    todoArr.forEach(generateTodoCardHtml)
+    // removeChild('section-todo')
+    // removeChild('form__radio')
+
+    todoArr.forEach(generateTodoCardHtml);
+    removeChild('form__radio')
+    renderTodoForm();
     // console.log(todoObjectArr)
 }
 

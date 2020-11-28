@@ -63,4 +63,19 @@ const idIndex = (arr, elementId) => {
 const newId = () => {
     
 }
-export { sortArray, parseNumArr, newDate, removeChild, idIndex }
+
+const getProject = (arr) => {
+    let projectArr = []
+    console.log(arr)
+
+    arr.forEach((element, index) => {
+        console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+        console.log(arr[index])
+        if (projectArr.indexOf(arr[index].project) === -1) {
+            projectArr.push(element.project);
+        }
+    });
+
+    return projectArr;
+}
+export { sortArray, parseNumArr, newDate, removeChild, idIndex, getProject }
