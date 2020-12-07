@@ -1,6 +1,6 @@
 body {
   font-family: "ubuntu", "sans-serif";
-  color: $color-primary;
+  color: $color-text;
   font-size: $default-font-size;
 }
 
@@ -14,12 +14,19 @@ body {
 .heading-tertiary {
   font-family: $heading-font;
   font-size: 5rem;
-  color: $color-primary-dark;
+  color: $color-primary;
 }
 
-.heading-description {
+.heading-quaternary {
+  // font-family: $heading-font;
   font-style: italic;
   font-size: 2rem;
+}
+
+.heading-quinary {
+  font-family: $heading-font;
+  font-size: 1.8rem;
+  color: $color-primary;
 }
 
 .heading-overdue,

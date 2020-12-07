@@ -1,19 +1,27 @@
 import format from 'date-fns/format'
-
+import compareDesc from 'date-fns/compareDesc'
+import { compareAsc } from 'date-fns'
 
 const sortArray = (arr) => {
-     
     // 1, Sort array by date
      arr.sort(function (a,b) {
-        var c = new Date(a.dueDate); // converts dueDate into js date so can be sorted
-        var d = new Date(b.dueDate);
+        console.log(new Date(a.JSDate));
+        console.log(new Date(b.dueDate))
+        var c = new Date(a.JSDate); // converts dueDate into js date so can be sorted
+        var d = new Date(b.JSDate);
     return c-d;
     });
     
+    console.log(arr)
     // 2, Sort array by priority
     arr.sort(function (a,b) { 
-        return b.priority-a.priority});
-}
+        return b.priority-a.priority
+    });
+
+        console.log(arr)
+    
+    return arr
+ }
 
 const parseNumArr = (arr) => {
     
@@ -39,8 +47,6 @@ const removeChild = (element) => {
             selector.removeChild(selector.lastChild);
         }
     }
-
-   
 }
 
 const idIndex = (arr, elementId) => {
@@ -66,11 +72,8 @@ const newId = () => {
 
 const getProject = (arr) => {
     let projectArr = []
-    console.log(arr)
 
     arr.forEach((element, index) => {
-        console.log('++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-        console.log(arr[index])
         if (projectArr.indexOf(arr[index].project) === -1) {
             projectArr.push(element.project);
         }

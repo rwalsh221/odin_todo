@@ -1,7 +1,7 @@
 import {idIndex, removeChild} from './utilities';
 import { cardIdFactory } from './factory';
-import {todoArr} from './todo_form'
-import renderTodoCard from './render';
+import {todoArr, setLocalStorage} from './data'
+import {render} from './render';
 
 const removeTodo = (e) => {
     const element = cardIdFactory(e);
@@ -14,7 +14,8 @@ const removeTodo = (e) => {
     }
 
     removeChild('section-todo');
-    renderTodoCard();
+    setLocalStorage();
+    render();
 }
 
 export { removeTodo };

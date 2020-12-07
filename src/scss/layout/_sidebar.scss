@@ -1,5 +1,76 @@
 .sidebar {
   grid-area: sidebar;
-  background-color: $color-primary-light;
+  background-color: $color-bg-dark;
   border-left: $border-primary;
+}
+
+.sidebar-top {
+  border-bottom: $border-primary;
+  height: 25%;
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  // background-color: greenyellow;
+  height: 73%;
+  width: 90%;
+  align-items: center;
+  justify-content: flex-start;
+  border: $border-double;
+  margin: 1rem auto 0 auto;
+}
+
+.heading-sidebar {
+  color: $color-primary;
+  text-align: center;
+  margin: 1rem 0;
+  text-decoration: underline;
+}
+
+.sidebar-card {
+  background-color: $color-text;
+  color: $color-primary;
+  width: 90%;
+  height: 12rem;
+  border: $border-double;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // box-shadow: $shadow-primary;
+
+  &__heading,
+  &__date {
+    border: $border-primary;
+    padding: 0.5rem;
+  }
+
+  &__heading {
+    margin: 1rem;
+  }
+
+  &__date {
+    width: 60%;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-text;
+    border: 5px double $color-text;
+    transform: scale(1.05);
+  }
+
+  &:hover &__heading,
+  &__date {
+    border: 2px solid $color-text;
+  }
+
+  &:active {
+    transform: translateY(2px);
+  }
+}
+
+.sidebar-card:not(:last-child) {
+  margin-bottom: 3.8rem;
 }

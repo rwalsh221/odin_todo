@@ -1,6 +1,59 @@
+.todo-card__front--btn {
+  padding: 0;
+}
+
 .btn {
-  border: $border-primary;
-  background-color: $color-primary;
+  height: 10rem;
+  width: 80%;
+  background-color: $color-text;
+  color: $color-primary;
+  border-radius: 2.5rem;
+  border: $border-double;
+  box-shadow: $shadow-primary;
+  transition: box-shadow 0.1s, transform 0.1s, color 0.8s, background-color 0.8s;
+  font-size: 5rem;
+  font-family: $heading-font;
+  overflow: hidden;
+
+  &__label {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    background-size: 209%;
+    border-radius: inherit;
+    margin-bottom: 0;
+    padding-top: 1rem;
+    transition: all 0.5s;
+
+    &:hover,
+    &:active {
+      background-position: 100%;
+    }
+  }
+
+  &:hover {
+    color: $color-primary;
+    background-color: $color-bg-dark;
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(3px);
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &--small {
+    height: 5rem;
+    width: 10rem;
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+    display: inline-block;
+  }
 }
 
 .btn__collapse {
@@ -17,4 +70,33 @@
   &:hover {
     background-color: orangered;
   }
+}
+
+.lg-default {
+  background-image: linear-gradient(
+    120deg,
+    $color-text 0%,
+    $color-text 50%,
+    $color-bg-dark 50%
+  );
+}
+
+.lg-overdue {
+  background-image: linear-gradient(
+    120deg,
+    #d41717 0%,
+    #d41717 50%,
+    $color-bg-dark 50%
+  );
+}
+
+.lg-complete {
+  background-image: linear-gradient(
+    120deg,
+    #24b30b 0%,
+    #24b30b 50%,
+    $color-bg-dark 50%
+  );
+
+  // box-shadow: 2px 2px 4px #24b30b;
 }

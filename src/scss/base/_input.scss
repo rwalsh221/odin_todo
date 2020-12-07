@@ -1,10 +1,9 @@
 input,
 textarea {
-  width: 100%;
   font-size: 2rem;
   border: $border-double;
-  background-color: $color-primary;
-  color: $color-primary-vlight;
+  color: $color-text;
+  text-decoration: none;
 
   &:focus {
     outline: none;

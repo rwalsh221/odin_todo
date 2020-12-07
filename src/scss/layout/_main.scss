@@ -7,10 +7,10 @@
   //   $color-primary 15%,
   //   $color-primary-light 60%
   // );
-  background: radial-gradient(
-    circle farthest-side at center center,
-    $color-primary 0%,
-    $color-primary-light 50%
-  );
+  // background: radial-gradient(
+  //   circle farthest-side at center center,
+  //   $color-primary 0%,
+  //   $color-primary-light 50%
+  // );
+  background-color: $color-bg;
 }
-

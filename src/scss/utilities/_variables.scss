@@ -1,13 +1,15 @@
 // COLORS
-$color-primary: #28096e;
-$color-primary-light: #471ca9;
+$color-primary: #b5c7fa;
+$color-primary-light: #72bfa1;
 $color-primary-vlight: #7a45f0;
-$color-primary-dark: #160934;
+$color-primary-dark: #8c9999;
+
+$color-text: #252739;
 
 // $color-bg: #a699c4;
-$color-bg: #8752ff;
+$color-bg: #babbb4;
 
-$color-bg-dark: #8165c1;
+$color-bg-dark: #282927;
 
 // FONT
 $default-font-size: 1.6rem;
@@ -16,10 +18,20 @@ $heading-font: "Big Shoulders Stencil Text", cursive;
 
 //BORDER
 $border-double: 5px double $color-primary-dark;
-$border-primary: 3px solid $color-primary-dark;
+$border-double-light: 5px double $color-primary;
 
-$border-double-focus: 5px double red;
+$border-primary: 2px solid $color-primary-dark;
+
+$border-double-focus: 5px double $color-primary;
 
 // SHADOW
 
-$shadow-primary: 5px 5px 10px $color-primary-dark;
+$shadow-primary: 2px 2px 4px $color-primary-dark;
+
+// MIXIN
+
+@mixin forminput {
+  width: 100%;
+  height: 5rem;
+  background-color: $color-bg;
+}

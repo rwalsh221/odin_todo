@@ -1,5 +1,72 @@
 .footer {
   grid-area: footer;
-  background-color: $color-bg;
+  background-color: $color-bg-dark;
   border-top: $border-primary;
+  position: relative;
+}
+
+.heading-footer {
+  color: $color-primary;
+  text-align: center;
+  text-decoration: underline;
+
+  &:hover {
+    color: $color-text;
+  }
+}
+
+.project-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  &__card {
+    margin-top: 0.5rem;
+    height: 4.5rem;
+    width: 15rem;
+    background-color: $color-text;
+    border: $border-double;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-text;
+      border: 5px double $color-text;
+      transform: scale(1.05);
+    }
+
+    &:hover h5 {
+      color: $color-text;
+    }
+
+    &:active {
+      transform: translateY(2px);
+    }
+  }
+}
+
+.footer-icon {
+  &__icon {
+    position: absolute;
+    top: 2.7rem;
+    width: 5rem;
+    height: 5rem;
+    padding: 0.2rem;
+    background-color: $color-text;
+    border: $border-double;
+
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+}
+
+#icon-advance {
+  right: 8rem;
+  visibility: hidden;
+}
+
+#icon-return {
+  left: 8rem;
 }

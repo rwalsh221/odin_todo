@@ -1,26 +1,15 @@
 import {newDate} from './utilities'
 import { nanoid } from 'nanoid'
-import { getMonth } from 'date-fns'
-
-// const todoObjectArr = [
-//   {id: 1111, title: 'first Todo', description: 'this is the first todo', dueDate: newDate(2019, 11, 2), priority: 4, notes: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt', complete: true, completeDate: newDate(2019, 11, 8)},
-//   {id: 1112, title: 'second Todo', description: 'this is the second todo', dueDate: newDate(2020, 11, 8), priority: 5, notes: 'inventore exercitationem ipsam tenetur veniam natus repellat nemo cupiditate!',  complete: false},
-//   {id: 1113, title: 'third Todo', description: 'this is the third todo', dueDate: newDate(2020, 11, 1), priority: 4, notes: 'inventore exercitationem ipsam tenetur veniam natus repellat nemo cupiditate!' , complete: false},
-
-// ];
-
-//  2018-07-22
 
 const todoFactory = (title, description, dateDue, priority, notes, checklistElement, project) => {
   
-  // generates id form html class/id
+  // generates id for html class/id
   const id = nanoid()
-  
   // takes date input as string from form '2018-07-22'
   const dateArr = dateDue.split('-')
-  const dueDate = newDate(parseInt(dateArr[0]), parseInt(dateArr[1]), parseInt(dateArr[2]))
-  
-  
+  const dueDate = newDate(parseInt(dateArr[0]), parseInt(dateArr[1] - 1), parseInt(dateArr[2]))
+  const JSDate = dateDue // need jsdate to sort todoArr by date for ui. takes date format from input form. dueDate is incorrect format
+ 
   let complete = false
   let checklist = []
   if (checklistElement.hasChildNodes()){
@@ -29,30 +18,23 @@ const todoFactory = (title, description, dateDue, priority, notes, checklistElem
       complete: false})
       })}
   
-
   const completeDate = () => {
-    
     let d = new Date()
-
     return newDate(d.getFullYear(), d.getMonth(), d.getDate())
-
-    
   }
-  return {id, title, description, dueDate, priority, notes, checklist, complete, completeDate, project}
+  
+  return {id, title, description, dueDate, priority, notes, checklist, complete, completeDate, project, JSDate}
 }
 
 const cardIdFactory = (event) => {
     
-    // console.log(event.target.parentNode.id)
-    // console.log(event.target.className)
     const eventId = event.target.parentNode.id
     const eventClass = event.target.className
 
     const splitEventId = eventId.split('$')
-    console.log(splitEventId)
-
+    
     const cardId = splitEventId[1];
-    console.log(cardId)
+
     return {cardId, eventClass, eventId}
   }
 
