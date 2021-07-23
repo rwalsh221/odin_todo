@@ -1,127 +1,223 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        
-        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@500;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@500;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil+Text:wght@500;700&family=Ubuntu:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <title>tO.dO App</title>
+  </head>
 
-        <title>tO.dO App</title>
+  <body class="main__grid">
+    <header class="header">
+      <div class="header-icon">
+        <img
+          src="./assets/icon/icons8-shopping-basket-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-housekeeping-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-maintenance-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-handshake-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-barbell-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-working-with-a-laptop-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+      </div>
+      <div class="header__dash"></div>
+      <div class="main-heading">
+        <h1 class="heading-primary">tO.dO</h1>
+      </div>
+      <div class="header__dash"></div>
+      <div class="header-icon">
+        <img
+          src="./assets/icon/icons8-shopping-basket-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-housekeeping-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-maintenance-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-handshake-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-barbell-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+        <img
+          src="./assets/icon/icons8-working-with-a-laptop-96.png"
+          alt="header icon"
+          class="header-icon__icon"
+        />
+      </div>
+    </header>
 
-    </head>
+    <main class="main">
+      <!-- NEW TODO FORM ************************************************************************************************************************** -->
+      <section class="form-popup" id="section-popup">
+        <div class="validation-warning fade-in" id="validation-warning">
+          <p id="validation-warning__content"></p>
+        </div>
 
-    <body class="main__grid">
+        <input type="checkbox" class="form-popup__checkbox" id="form-toggle" />
 
-        
+        <label for="form-toggle" class="form-popup__button">NEW To.Do</label>
 
-        <header class="header">
-            <div class="header-icon">
-                <img src="./assets/icon/icons8-shopping-basket-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-housekeeping-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-maintenance-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-handshake-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-barbell-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-working-with-a-laptop-96.png" alt="header icon" class="header-icon__icon">
-            </div>
-            <div class="header__dash"></div>
-            <div class="main-heading">
-                <h1 class="heading-primary">tO.dO</h1>
-            </div>
-            <div class="header__dash"></div>
-            <div class="header-icon">
-                <img src="./assets/icon/icons8-shopping-basket-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-housekeeping-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-maintenance-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-handshake-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-barbell-96.png" alt="header icon" class="header-icon__icon">
-                <img src="./assets/icon/icons8-working-with-a-laptop-96.png" alt="header icon" class="header-icon__icon">
-            </div>
-        </header>
+        <div class="form-popup__background">&nbsp;</div>
 
-        <section class="form-popup" id="section-popup">
+        <div class="form-popup__form" id="form-popup__form">
+          <div class="todo-form" id="todo-form">
+            <form class="todo-form__container" id="todo-form__container">
+              <label id="todo-form__title--label" for="todo-form__title"
+                >Title:</label
+              >
+              <input
+                type="text"
+                id="todo-form__title"
+                name="todo-form__title"
+                required
+              />
 
-            <div class="validation-warning fade-in" id="validation-warning">
-                <p id="validation-warning__content"></p>
-            </div>
-            
-            <input type="checkbox" class="form-popup__checkbox" id="form-toggle">
+              <label
+                id="todo-form__description--label"
+                for="todo-form__description"
+                >Description:</label
+              >
+              <input
+                type="text"
+                id="todo-form__description"
+                name="todo-form__description"
+              />
 
-            <label for="form-toggle" class="form-popup__button">NEW To.Do</label>
+              <label id="todo-form__due-date--label" for="todo-form__due-date"
+                >Due Date:</label
+              >
+              <input
+                type="date"
+                id="todo-form__due-date"
+                name="todo-form__due-date"
+                value=""
+                required
+              />
 
-            <div class="form-popup__background">&nbsp;</div>
-            
-            <div class="form-popup__form" id="form-popup__form">
-                <div class="todo-form" id="todo-form">
-                    <form class="todo-form__container" id="todo-form__container">
-                        <label  id="todo-form__title--label" for="todo-form__title">Title:</label>
-                        <input type="text" id="todo-form__title" name="todo-form__title" required>
-                        
-                        <label id="todo-form__description--label" for="todo-form__description">Description:</label>
-                        <input type="text" id="todo-form__description" name="todo-form__description">
-                        
-                        <label id="todo-form__due-date--label" for="todo-form__due-date">Due Date:</label>
-                        <input type="date" id="todo-form__due-date" name="todo-form__due-date" value="" required>
-                        
-                        <label id="todo-form__notes--label" for="todo-form__notes">Notes:</label>
-                        <textarea name="todo-form__notes" id="todo-form__notes" cols="30" rows="9"></textarea>
-                        
-                        <label id="todo-form__checklist--label" for="todo-form__checklist">Steps:</label>
-                        <input type="text" id="todo-form__checklist" name="todo-form__checklist">
-                        
-                        
-                        <div id="form__radio" class="form__radio form__project">
-                            <!-- <p>Please select your project:</p>
-                            <input type="radio" id="todo-form__default" name="project" value="default">
-                            <label for="todo-form__default">Default</label>
-                            <input type="radio" id="todo-form__default" name="project" value="default">
-                            <label for="todo-form__default">Default</label> -->
-                        </div>
+              <label id="todo-form__notes--label" for="todo-form__notes"
+                >Notes:</label
+              >
+              <textarea
+                name="todo-form__notes"
+                id="todo-form__notes"
+                cols="30"
+                rows="9"
+              ></textarea>
 
-                        <div class="todo-form__new--label">
-                            <input type="radio" id="todo-form__new" name="project" value="new-project" required>
-                            <label for="todo-form__new">New Project</label>
-                        </div>
-                        
-                        <input type="text" id="todo-form__new--text" name="project" value="">
-                        
-                        <!-- <div id="form__radio" class="form__radio form__project">
+              <label id="todo-form__checklist--label" for="todo-form__checklist"
+                >Steps:</label
+              >
+              <input
+                type="text"
+                id="todo-form__checklist"
+                name="todo-form__checklist"
+              />
 
-                            
-                            
-                        </div> -->
-                        
-                      
-                        <div class="checklist" id="checklist"></div>
-                        <button type ="button" class="btn btn--small btn__checklist" id="checklist-btn">Add step</button><br>
-                        <button type="button" class="todo-form__btn btn btn__submit" id="form-submit">Create new ToDo</button>
-                    
-                         <!-- <p>Please select your project:</p>
-                            <input type="radio" id="todo-form__default" name="project" value="default">
-                            <label for="todo-form__default">Default</label><br>
-                            <input type="radio" id="todo-form__new" name="project" value="new-project">
-                            <label for="todo-form__new">New Project</label>
-                            <input type="text" id="todo-form__new" name="project" value=""><br> -->
-                        
-                        
-                    </form>
-                    
-                    
-                </div>
-            
-                
-            </div>
-        </section>
-        
-            
-         
-        
-        <main class="main">
-            <section class="section-todo" id="section-todo">
-                
-               <!-- <div class="todo-card" id="todo-card-$1111">
+              <div id="form__radio" class="form__radio form__project">
+                <!-- <p>Please select your project:</p>
+                                  <input type="radio" id="todo-form__default" name="project" value="default">
+                                  <label for="todo-form__default">Default</label>
+                                  <input type="radio" id="todo-form__default" name="project" value="default">
+                                  <label for="todo-form__default">Default</label> -->
+              </div>
+
+              <div class="todo-form__new--label">
+                <input
+                  type="radio"
+                  id="todo-form__new"
+                  name="project"
+                  value="new-project"
+                  required
+                />
+                <label for="todo-form__new">New Project</label>
+              </div>
+
+              <input
+                type="text"
+                id="todo-form__new--text"
+                name="project"
+                value=""
+              />
+
+              <!-- <div id="form__radio" class="form__radio form__project">
+      
+                                  
+                                  
+                              </div> -->
+
+              <div class="checklist" id="checklist"></div>
+              <button
+                type="button"
+                class="btn btn--small btn__checklist"
+                id="checklist-btn"
+              >
+                Add step</button
+              ><br />
+              <button
+                type="button"
+                class="todo-form__btn btn btn__submit"
+                id="form-submit"
+              >
+                Create new ToDo
+              </button>
+
+              <!-- <p>Please select your project:</p>
+                                  <input type="radio" id="todo-form__default" name="project" value="default">
+                                  <label for="todo-form__default">Default</label><br>
+                                  <input type="radio" id="todo-form__new" name="project" value="new-project">
+                                  <label for="todo-form__new">New Project</label>
+                                  <input type="text" id="todo-form__new" name="project" value=""><br> -->
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- MAIN BODY SECTION ************************************************************************************************************************** -->
+      <section class="section-todo" id="section-todo">
+        <!-- <div class="todo-card" id="todo-card-$1111">
                     <div class="overdue"><h5 class="heading-overdue">ToDo Overdue</h5></div>
                     <h3 class="heading-tertiary todo-card__heading">Lorem, ipsum</h3>
                     <h4 class="todo-card__description heading-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, blanditiis?</h4>
@@ -139,9 +235,9 @@
                     </ul>
                 </div> -->
 
-                <!-- <div class="todo-card" id="todo-card-$1111"> -->
-                    <!-- CARD FRONT -->
-                    <!-- <div class="todo-card__front" id="todo-card__front-$1111">
+        <!-- <div class="todo-card" id="todo-card-$1111"> -->
+        <!-- CARD FRONT -->
+        <!-- <div class="todo-card__front" id="todo-card__front-$1111">
                         <h3 class=" heading-tertiary todo-card__front--heading">Lorem, ipsum</h3>
                         <h4 class="todo-card__front--description heading-quaternary">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur, blanditiis?</h4>
                         <p class="todo-card__front--due-date">Due: <span class="todo-card__front--date-content">08/12/2020</span></p>
@@ -150,8 +246,8 @@
                         </button>
                     
                     </div> -->
-                    <!-- CARD BACK -->
-                    <!-- <div class="todo-card__back" id="todo-card__back-$1111">
+        <!-- CARD BACK -->
+        <!-- <div class="todo-card__back" id="todo-card__back-$1111">
                         <button type="button" class="btn btn__delete btn--small" id="btn__delete-$1111">delete</button>
                         <button type="button" class="btn btn__complete btn--small" id="btn__complete-$1111">complete</button>
                         <div class="break"></div>
@@ -174,12 +270,12 @@
                         </ul>
                         <button id="btn__back-$1111" class="btn todo-card__back--btn">todo</button>
                     </div> -->
-                    
-                    <!-- <div class="overdue"><h5 class="heading-overdue">ToDo Overdue</h5></div> -->
-                    
-                <!-- </div> -->
-                
-                 <!-- 
+
+        <!-- <div class="overdue"><h5 class="heading-overdue">ToDo Overdue</h5></div> -->
+
+        <!-- </div> -->
+
+        <!-- 
                 <div class="todo-card" id="todo-card-$1112">
                     <div class="complete"><h5 class="heading-complete">ToDo Complte</h5></div>
                     <h3 class="heading-tertiary todo-card__heading">Lorem, ipsum</h3>
@@ -252,14 +348,14 @@
                         <li class="todo-card__checklist--item">Lorem ipsum dolor sit amet.</li>
                     </ul>
                 </div> -->
+      </section>
+    </main>
 
-            </section>
-        </main>
-
-        <section class="sidebar">
-            <div class="sidebar-top"></div>
-            <div class="sidebar-bottom" id="sidebar-bottom">
-                <!-- <h4 class="heading-quaternary heading-sidebar">Due Soon</h4>
+    <!-- SIDEBAR SECTION ************************************************************************************************************************** -->
+    <section class="sidebar">
+      <div class="sidebar-top"></div>
+      <div class="sidebar-bottom" id="sidebar-bottom">
+        <!-- <h4 class="heading-quaternary heading-sidebar">Due Soon</h4>
                 <div id="sidebar-card-$1111" class="sidebar-card">
                     <h4 class="heading-quaternary sidebar-card__heading" id="sidebar-card__heading-$1111">Heading</h4>
                     <h4 class="heading-quaternary sidebar-card__date" id="sidebar-card__date-$1111">08/12/2020</h4>
@@ -276,15 +372,14 @@
                     <h4 class="heading-quaternary sidebar-card__heading" id="sidebar-card__heading-$1111">Heading</h4>
                     <h4 class="heading-quaternary sidebar-card__date" id="sidebar-card__date-$1111">08/12/2020</h4>
                 </div> -->
-            </div>
+      </div>
+    </section>
 
-        </section>
- 
-        <footer class="footer">
-            <div class="footer-content" id="footer-content">
-               <h4 class="heading-quaternary heading-footer">Projects</h4>
-               <div class="project-container" id="project-container">
-                    <!-- <div class="project-container__card" id="footer-card-$1111">
+    <footer class="footer">
+      <div class="footer-content" id="footer-content">
+        <h4 class="heading-quaternary heading-footer">Projects</h4>
+        <div class="project-container" id="project-container">
+          <!-- <div class="project-container__card" id="footer-card-$1111">
                        <h5 class="heading-quinary project-container__card--heading" id="footer-card__heading-$1111">Project</h5>
                     </div>
                     <div class="project-container__card" id="footer-card-$1111">
@@ -296,14 +391,23 @@
                      <div class="project-container__card" id="footer-card-$1111">
                         <h5 class="heading-quinary project-container__card--heading" id="footer-card__heading-$1111">Project</h5>
                      </div> -->
-               </div>
-            </div>
-            <div class="footer-icon">
-                <img src="./assets/icon/icons8-advance-96.png" alt="next icon" class="footer-icon__icon" id="icon-advance">
-                <img src="./assets/icon/icons8-return-96.png" alt="next icon" class="footer-icon__icon" id="icon-return">
-                
-            </div>
-            <script> </script>
-        </footer>
-    </body>
+        </div>
+      </div>
+      <div class="footer-icon">
+        <img
+          src="./assets/icon/icons8-advance-96.png"
+          alt="next icon"
+          class="footer-icon__icon"
+          id="icon-advance"
+        />
+        <img
+          src="./assets/icon/icons8-return-96.png"
+          alt="next icon"
+          class="footer-icon__icon"
+          id="icon-return"
+        />
+      </div>
+      <script></script>
+    </footer>
+  </body>
 </html>
