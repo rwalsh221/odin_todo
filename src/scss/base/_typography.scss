@@ -1,5 +1,5 @@
 body {
-  font-family: "ubuntu", "sans-serif";
+  font-family: 'ubuntu', 'sans-serif';
   color: $color-text;
   font-size: $default-font-size;
 }
@@ -7,7 +7,7 @@ body {
 .heading-primary {
   font-family: $heading-font;
   font-weight: 700;
-  font-size: 8rem;
+  font-size: 7rem;
   color: $color-primary-dark;
 }
 

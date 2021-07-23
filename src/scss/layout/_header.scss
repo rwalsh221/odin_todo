@@ -6,6 +6,7 @@
   justify-content: space-around;
   align-items: center;
   border-bottom: $border-primary;
+  padding: 0.5rem;
 
   &__dash {
     background-color: $color-primary-dark;
@@ -14,7 +15,7 @@
   }
 
   &__dash:after {
-    content: "";
+    content: '';
     position: absolute;
     top: -15px;
     left: -15px;
@@ -27,7 +28,7 @@
 .main-heading {
   display: inline-block;
   border: $border-double;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 .header-icon {
