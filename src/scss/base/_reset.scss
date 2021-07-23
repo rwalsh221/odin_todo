@@ -33,3 +33,21 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+@media screen and (max-width: $fontSize-55) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media screen and (max-width: $ipadVertical) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media screen and (max-width: $fontSize-45) {
+  html {
+    font-size: 45%;
+  }
+}

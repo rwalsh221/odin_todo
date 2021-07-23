@@ -39,3 +39,12 @@ body {
   font-family: $heading-font;
   color: $color-primary-dark;
 }
+
+@media screen and (max-width: $ipadVertical) {
+  .heading-primary {
+    font-family: $heading-font;
+    font-weight: 700;
+    font-size: 6rem;
+    color: $color-primary-dark;
+  }
+}

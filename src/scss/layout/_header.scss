@@ -7,6 +7,7 @@
   align-items: center;
   border-bottom: $border-primary;
   padding: 0.5rem;
+  min-height: max-content;
 
   &__dash {
     background-color: $color-primary-dark;
@@ -34,13 +35,69 @@
 .header-icon {
   display: flex;
   width: 20rem;
-  flex-wrap: wrap;
   justify-content: center;
   border: $border-double;
   &__icon {
     width: 5rem;
     height: 5rem;
     // filter: invert(12%) sepia(55%) saturate(5217%) hue-rotate(256deg)
-    // brightness(72%) contrast(112%);
+    //   brightness(72%) contrast(112%);
+  }
+}
+
+@media screen and (max-width: $fontSize-55) {
+  .header {
+    &__dash {
+      padding: 0.5rem 4rem;
+    }
+  }
+}
+
+@media screen and (max-width: $ipadVertical) {
+  .main-heading {
+    padding: 0.5rem;
+  }
+
+  .header {
+    &__dash {
+      padding: 0.5rem 2.5rem;
+    }
+  }
+
+  .header-icon {
+    width: max-content;
+    padding: 0.5rem;
+
+    &__icon {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: $fontSize-45) {
+  .header {
+    &__dash {
+      padding: 0.5rem 2rem;
+    }
+
+    &__dash:after {
+      content: '';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      right: -10px;
+      bottom: -10px;
+      border: $border-double;
+    }
+  }
+
+  .header-icon {
+    padding: 0.5rem;
+
+    &__icon {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
   }
 }

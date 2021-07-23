@@ -1,12 +1,13 @@
 .main__grid {
+  min-height: 100vh;
   display: grid;
   grid-template-rows:
-    minmax(min-content, 12vh)
+    minmax(max-content, 12vh)
     78vh
     minmax(min-content, 10vh);
   grid-template-columns: 85% 15%;
   grid-template-areas:
-    "header sidebar"
-    "main sidebar"
-    "footer sidebar";
+    'header sidebar'
+    'main sidebar'
+    'footer sidebar';
 }

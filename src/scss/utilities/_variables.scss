@@ -14,7 +14,7 @@ $color-bg-dark: #282927;
 // FONT
 $default-font-size: 1.6rem;
 
-$heading-font: "Big Shoulders Stencil Text", cursive;
+$heading-font: 'Big Shoulders Stencil Text', cursive;
 
 //BORDER
 $border-double: 5px double $color-primary-dark;
@@ -35,3 +35,9 @@ $shadow-primary: 2px 2px 4px $color-primary-dark;
   height: 5rem;
   background-color: $color-bg;
 }
+
+// MEDIA QUERY BREAKPOINT
+
+$fontSize-55: 1048px;
+$ipadVertical: 769px;
+$fontSize-45: 580px;
