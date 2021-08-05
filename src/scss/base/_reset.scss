@@ -3,7 +3,9 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
+  color: green;
 }
+
 *,
 *:before,
 *:after {
@@ -25,13 +27,8 @@ ul {
   font-weight: normal;
 }
 
-/* ol, ul {
-    list-style: none;
-  } */
-
-img {
-  max-width: 100%;
-  height: auto;
+body {
+  // overflow: hidden;
 }
 
 @media screen and (max-width: $fontSize-55) {

@@ -1,13 +1,29 @@
 .main__grid {
-  min-height: 100vh;
+
   display: grid;
   grid-template-rows:
     minmax(max-content, 12vh)
     78vh
-    minmax(min-content, 10vh);
+    minmax(max-content, 10vh);
   grid-template-columns: 85% 15%;
   grid-template-areas:
     'header sidebar'
     'main sidebar'
     'footer sidebar';
+}
+
+@media screen and (max-width: $ipadVertical) {
+  .main__grid {
+    grid-template-rows:
+      minmax(max-content, 12vh)
+      minmax(max-content, 12vh)
+      minmax(min-content, 10vh)
+      max-content;
+    grid-template-columns: auto;
+    grid-template-areas:
+      'header'
+      'sidebar'
+      'footer'
+      'main';
+  }
 }
