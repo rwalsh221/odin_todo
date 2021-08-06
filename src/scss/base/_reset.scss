@@ -3,7 +3,6 @@
 html {
   box-sizing: border-box;
   font-size: 62.5%;
-  color: green;
 }
 
 *,
@@ -27,8 +26,14 @@ ul {
   font-weight: normal;
 }
 
-body {
-  // overflow: hidden;
+@media screen and (min-width: $maxWidth) {
+  body {
+    width: 1920px;
+    margin: 0 auto;
+  }
+  html {
+    background-color: black;
+  }
 }
 
 @media screen and (max-width: $fontSize-55) {
@@ -46,5 +51,17 @@ body {
 @media screen and (max-width: $fontSize-45) {
   html {
     font-size: 45%;
+  }
+}
+
+@media screen and (max-width: $fontSize-40) {
+  html {
+    font-size: 40%;
+  }
+}
+
+@media screen and (max-width: $fontSize-35) {
+  html {
+    font-size: 35%;
   }
 }

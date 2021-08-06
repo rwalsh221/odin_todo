@@ -1,5 +1,4 @@
 .main__grid {
-
   display: grid;
   grid-template-rows:
     minmax(max-content, 12vh)
@@ -17,9 +16,9 @@
     grid-template-rows:
       minmax(max-content, 12vh)
       minmax(max-content, 12vh)
-      minmax(min-content, 10vh)
+      minmax(max-content, 12vh)
       max-content;
-    grid-template-columns: auto;
+    grid-template-columns: 100%;
     grid-template-areas:
       'header'
       'sidebar'

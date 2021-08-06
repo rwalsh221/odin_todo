@@ -43,6 +43,12 @@
     &:active {
       transform: translateY(2px);
     }
+
+    &--heading {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
   }
 }
 
@@ -69,4 +75,93 @@
 
 #icon-return {
   left: 8rem;
+}
+
+@media screen and (max-width: $ipadVertical) {
+  .footer-icon {
+    &__icon {
+      top: 21%;
+    }
+  }
+  #icon-advance {
+    right: 2%;
+  }
+
+  #icon-return {
+    left: 2%;
+  }
+
+  .heading-footer {
+    margin-bottom: 1rem;
+  }
+
+  .project-container {
+    justify-content: center;
+
+    &__card {
+      margin: 0 1%;
+      width: 18%;
+    }
+  }
+}
+
+@media screen and (max-width: $fontSize-45) {
+  .footer-icon {
+    &__icon {
+      top: 18%;
+    }
+  }
+  #icon-advance {
+    right: 2%;
+  }
+
+  #icon-return {
+    left: 2%;
+  }
+}
+
+@media screen and (max-width: $fontSize-40) {
+  .project-container {
+    &__card {
+      padding: 2rem;
+    }
+  }
+
+  .footer-icon {
+    &__icon {
+      width: 7rem;
+      height: 7rem;
+      padding: 1rem;
+      top: 16%;
+    }
+  }
+}
+
+@media screen and (max-width: $iphonePlus) {
+  .heading-footer {
+    margin: 2rem 0;
+    font-size: 3rem;
+  }
+
+  .project-container {
+    flex-wrap: wrap;
+    &__card {
+      flex-shrink: 0;
+      width: 40%;
+      margin: 2rem;
+    }
+  }
+
+  .footer-icon {
+    &__icon {
+      top: 5%;
+    }
+  }
+  #icon-advance {
+    right: 2rem;
+  }
+
+  #icon-return {
+    left: 2rem;
+  }
 }

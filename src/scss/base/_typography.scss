@@ -48,3 +48,15 @@ body {
     color: $color-primary-dark;
   }
 }
+
+@media screen and (max-width: $fontSize-40) {
+  .heading-quinary {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: $iphonePlus) {
+  .heading-quaternary {
+    font-size: 2.5rem;
+  }
+}

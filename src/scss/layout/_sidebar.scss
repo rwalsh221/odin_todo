@@ -12,7 +12,6 @@
 .sidebar-bottom {
   display: flex;
   flex-direction: column;
-  // background-color: greenyellow;
   height: 73%;
   width: 90%;
   align-items: center;
@@ -38,7 +37,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  // box-shadow: $shadow-primary;
 
   &__heading,
   &__date {
@@ -48,6 +46,11 @@
 
   &__heading {
     margin: 1rem;
+    width: 80%;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
 
   &__date {
@@ -76,12 +79,10 @@
 }
 
 @media screen and (max-width: $ipadVertical) {
-  
-
-.sidebar {
-  padding: 2rem;
-  border-left: none;
-}
+  .sidebar {
+    padding: 2rem;
+    border-left: none;
+  }
 
   .sidebar-top {
     display: none;
@@ -97,78 +98,33 @@
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-
   }
 
   .heading-sidebar {
     width: 100%;
-    flex-shrink: 0;
   }
-  
 
   .sidebar-card {
     width: 22%;
-    flex-shrink: 1;
     margin: 1rem;
+
+    &__date {
+      width: 80%;
+      text-align: center;
     }
-
-    .sidebar-card:not(:last-child) {
-      margin-bottom: 1rem;
-    }
-
-
-  .sidebar-bottom {
-    // display: flex;
-    // flex-direction: row;
-    // // background-color: greenyellow;
-    // height: 73%;
-    // width: 90%;
-    // align-items: center;
-    // justify-content: flex-start;
-    // border: $border-double;
-    // margin: 1rem auto 0 auto;
   }
 
-  // .sidebar-card {
-  //   background-color: $color-text;
-  //   color: $color-primary;
-  //   width: 20%;
-  //   height: 12rem;
-  //   border: $border-double;
-  //   border-radius: 2rem;
-  //   display: flex;
-  //   flex-direction: column;
-  //   align-items: center;
-  //   box-shadow: $shadow-primary;
+  .sidebar-card:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}
 
-  //   &__heading,
-  //   &__date {
-  //     border: $border-primary;
-  //     padding: 0.5rem;
-  //   }
-
-  //   &__heading {
-  //     margin: 1rem;
-  //   }
-
-  //   &__date {
-  //     width: 60%;
-  //   }
-
-  //   &:hover {
-  //     background-color: $color-primary;
-  //     color: $color-text;
-  //     border: 5px double $color-text;
-  //     transform: scale(1.05);
-  //   }
-
-  //   &:hover &__heading,
-  //   &__date {
-  //     border: 2px solid $color-text;
-  //   }
-
-  //   &:active {
-  //     transform: translateY(2px);
-  //   }
-  // }
+@media screen and (max-width: $iphonePlus) {
+  .sidebar-card {
+    width: 40%;
+    height: max-content;
+    &__date {
+      width: 90%;
+    }
+  }
 }
