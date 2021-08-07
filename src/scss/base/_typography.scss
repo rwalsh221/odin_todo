@@ -40,7 +40,7 @@ body {
   color: $color-primary-dark;
 }
 
-@media screen and (max-width: $ipadVertical) {
+@media screen and (max-width: $ipadProVertical) {
   .heading-primary {
     font-family: $heading-font;
     font-weight: 700;

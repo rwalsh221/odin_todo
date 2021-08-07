@@ -11,7 +11,7 @@
     'footer sidebar';
 }
 
-@media screen and (max-width: $ipadVertical) {
+@media screen and (max-width: $ipadProVertical) {
   .main__grid {
     grid-template-rows:
       minmax(max-content, 12vh)

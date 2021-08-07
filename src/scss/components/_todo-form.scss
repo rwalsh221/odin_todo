@@ -4,11 +4,8 @@
   align-items: center;
   width: 90%;
   height: max-content;
-  // border: $border-double;
   background-color: $color-bg-dark;
   font-size: 2.5rem;
-  // text-decoration: underline;
-  // box-shadow: $shadow-primary;
   z-index: 5000;
 
   * {
@@ -26,14 +23,9 @@
     line-height: 1rem;
     background-color: $color-primary-dark;
     border: $border-double-light;
-    // box-shadow: $shadow-primary;
     padding: 1rem;
     justify-items: center;
     align-items: center;
-
-    // & > label {
-    //   align-self: center;
-    // }
   }
 
   &__btn {
@@ -162,4 +154,120 @@
 .todo-form__btn {
   grid-row: 5 / span 1;
   grid-column: 1 / span 4;
+}
+
+@media screen and (max-width: $ipadProVertical) {
+  .todo-form {
+    width: 100%;
+    &__container {
+      width: 97%;
+      grid-template-columns: 1fr 2fr 1fr 2fr;
+    }
+  }
+}
+
+@media screen and (max-width: $ipadVertical) {
+  .todo-form {
+    width: 100%;
+    height: max-content;
+    &__container {
+      width: 97%;
+      height: max-content;
+      padding: 2rem;
+      grid-template-rows: repeat(9, max-content);
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  #todo-form__title {
+    grid-row: 1 / span 1;
+    grid-column: 2 / span 1;
+
+    &--label {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+    }
+  }
+
+  #todo-form__description {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+
+    &--label {
+      grid-row: 2 / span 1;
+      grid-column: 1 / span 1;
+    }
+  }
+
+  #todo-form__due-date {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+
+    &--label {
+      grid-row: 3 / span 1;
+      grid-column: 1 / span 1;
+    }
+  }
+
+  #todo-form__checklist {
+    grid-row: 5 / span 1;
+    grid-column: 2 / span 1;
+    &--label {
+      grid-row: 5 / span 1;
+      grid-column: 1 / span 1;
+    }
+  }
+
+  #todo-form__notes {
+    height: 20rem;
+    grid-row: 4 / span 1;
+    grid-column: 2 / span 1;
+
+    &--label {
+      grid-row: 4 / span 1;
+      grid-column: 1 / span 1;
+    }
+  }
+
+  .todo-form__new--label {
+    grid-row: 8 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  #todo-form__new--text {
+    grid-row: 8 / span 1;
+    grid-column: 2 / span 1;
+  }
+
+  .form__project {
+    grid-row: 7 / span 1;
+    grid-column: 1 / span 2;
+  }
+
+  .btn__checklist {
+    grid-row: 6 / span 1;
+    grid-column: 1 / span 1;
+  }
+
+  .checklist {
+    width: 100%;
+    grid-row: 6 / span 1;
+    grid-column: 2 / span 1;
+  }
+
+  .todo-form__btn {
+    grid-row: 9 / span 1;
+    grid-column: 1 / span 2;
+  }
+}
+
+@media screen and (max-width: $iphonePlus) {
+  .todo-form {
+    min-height: 100%;
+    &__container {
+      margin-top: 15rem;
+      height: max-content;
+      padding: 0;
+    }
+  }
 }
