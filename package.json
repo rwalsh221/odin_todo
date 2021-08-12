@@ -67,6 +67,7 @@
   "dependencies": {
     "array-move": "^4.0.0",
     "date-fns": "^2.23.0",
+    "firebase-tools": "^9.16.2",
     "nanoid": "^3.1.23",
     "uniqid": "^5.3.0"
   }
