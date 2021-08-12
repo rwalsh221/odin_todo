@@ -60,10 +60,7 @@
   width: 106.2%;
   margin-bottom: 0;
   padding-bottom: 0;
-
   border-bottom: none;
-
-  // padding: 1rem 0;
   order: 4;
   transition: order ease-in 0.3s;
 
@@ -97,6 +94,4 @@
     #24b30b 50%,
     $color-bg-dark 50%
   );
-
-  // box-shadow: 2px 2px 4px #24b30b;
 }

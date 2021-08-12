@@ -1,37 +1,27 @@
 .todo-card {
   flex-basis: 45rem;
-
   color: $color-primary;
-
-  // display: flex;
-  // flex-direction: column;
   position: relative;
   margin: 2.5rem 0;
   overflow: hidden;
-  // transition: height ease-in 0.2s;
   height: 60rem;
-  // justify-content: flex-start;
-  // flex-grow: 0;
 
   &__front {
     border: $border-primary;
     box-shadow: $shadow-primary;
     height: 100%;
     width: 100%;
-    // transition: rotate 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
     transition: all 0.9s;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    // align-items: center;
-    // flex-wrap: wrap;
     background-color: $color-primary;
+
     * {
       align-self: center;
       margin-bottom: 3rem;
@@ -39,26 +29,21 @@
       flex-shrink: 0;
       text-align: center;
       background-color: $color-text;
-
-      // border: $border-double;
     }
+
     &--heading {
       border: $border-double;
       text-align: center;
       padding: 0.5rem;
-      // margin: 2rem;
-      // order: 1;
-      // color: green;
-      // transition: all 0.8s ease;
-      // margin-top: 2rem;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
     }
 
     &--description {
       border: $border-double;
       padding: 0.5rem;
       width: 95%;
-      // order: 2;
-      // color: green;
     }
 
     &--due-date {
@@ -66,8 +51,6 @@
       font-size: 3rem;
       border: $border-double;
       padding: 0.5rem;
-      // order: 3;
-      // transition: all 1s;
     }
 
     &--btn {
@@ -88,20 +71,15 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     display: flex;
-    // flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
     align-content: flex-start;
     background-color: $color-primary;
+
     * {
-      // align-self: center;
-      // margin-bottom: 2rem;
       width: max-content;
       flex-shrink: 0;
-      // text-align: center;
       background-color: $color-text;
-
-      // border: $border-double;
     }
 
     &--note-heading,
@@ -115,35 +93,18 @@
     }
 
     &--notes {
-      // align-self: flex-start;
-      display: block;
-      // margin-top: 1rem;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
-      // margin-left: 2rem;
       width: 90%;
       border: $border-double;
       padding: 0.5rem;
-      // background-color: $color-primary;
-      // color: $color-bg;
       height: 6rem;
-      // overflow-y: scroll;
       margin-bottom: 2rem;
     }
 
     &--checklist {
-      // list-style: disc;
-      // align-self: flex-start;
-      // margin-left: 2rem;
       padding: 0.5rem;
       width: 90%;
       border: $border-double;
-      -webkit-backface-visibility: inherit;
-      backface-visibility: inherit;
-      // background-color: $color-primary;
-      // color: $color-bg;
       height: 12rem;
-      // overflow-y: scroll;
     }
 
     &--btn {
@@ -167,14 +128,6 @@
   margin: 2rem 0;
 }
 
-// .todo-card__front--checkbox:checked ~ .todo-card__front {
-//   // transform: rotateY(-180deg);
-//   background-color: brown;
-// }
-
-// &:hover &__side--back {
-//   transform: rotateY(0deg);
-// }
 .break {
   width: 100%;
   height: 0;
