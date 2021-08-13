@@ -26,6 +26,10 @@ ul {
   font-weight: normal;
 }
 
+body {
+  background-color: $color-bg;
+}
+
 @media screen and (min-width: $maxWidth) {
   body {
     width: 1920px;
