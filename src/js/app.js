@@ -55,11 +55,8 @@ sectionFooter.addEventListener('click', function (e) {
 });
 
 sectionSidebar.addEventListener('click', function (e) {
-  if (e.target.className === 'sidebar-card') {
+  if (e.target.className.includes('sidebar-card__click')) {
     renderDueSoonTodocard(e);
-  }
-  if (e.target.className === 'sidebar-card') {
-    console.log(e);
   }
 });
 

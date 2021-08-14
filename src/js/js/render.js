@@ -125,9 +125,9 @@ const renderSidebar = () => {
 
   const render = (arr) => {
     for (let i = 0; i < arr.length; i += 1) {
-      const sidebarHtml = ` <div id="sidebar-card-$${arr[i].id}" class="sidebar-card">
-                                <h4 class="heading-quaternary sidebar-card__heading" id="sidebar-card__heading-$${arr[i].id}">${arr[i].title}</h4>
-                                <h4 class="heading-quaternary sidebar-card__date" id="sidebar-card__date-$${arr[i].id}">${arr[i].dueDate}</h4>
+      const sidebarHtml = ` <div id="sidebar-card-$${arr[i].id}" class="sidebar-card sidebar-card__click">
+                                <h4 class="heading-quaternary sidebar-card__heading sidebar-card__click" id="sidebar-card__heading-$${arr[i].id}">${arr[i].title}</h4>
+                                <h4 class="heading-quaternary sidebar-card__date sidebar-card__click" id="sidebar-card__date-$${arr[i].id}">${arr[i].dueDate}</h4>
                             </div>`;
       DOMSidebar.insertAdjacentHTML('beforeend', sidebarHtml);
     }
