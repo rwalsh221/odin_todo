@@ -1,11 +1,10 @@
-import { cardIdFactory, todoFactory } from './factory';
-import { parseNumArr } from './utilities';
 import isFuture from 'date-fns/isFuture';
+import { cardIdFactory } from './factory';
+import { parseNumArr } from './utilities';
 
 const collapseTodo = (event) => {
   const newCardId = cardIdFactory(event);
-  console.log('collapse-todo ------------------------------------------');
-  console.log(newCardId);
+
   if (newCardId.eventClass.includes('btn__collapse')) {
     const todoNotes = document.getElementById(`notes-$${newCardId.cardId}`);
     const todoChecklist = document.getElementById(
@@ -34,9 +33,8 @@ const collapseTodo = (event) => {
 };
 
 const rotateTodo = (event) => {
-  console.log(event);
   const newCardId = cardIdFactory(event);
-  console.log(newCardId);
+
   const todoFront = document.getElementById(
     `todo-card__front-$${newCardId.cardId}`,
   );
@@ -46,24 +44,16 @@ const rotateTodo = (event) => {
   const todoNotes = document.getElementById(`notes-$${newCardId.cardId}`);
   const todoCheck = document.getElementById(`checklist-$${newCardId.cardId}`);
 
-  console.log('press rotate');
-  // console.log(todoFront.style.display)
-
   if (todoFront.style.transform === 'rotateY(180deg)') {
     todoFront.style.transform = 'rotateY(0deg)';
     todoBack.style.transform = 'rotateY(180deg)';
     todoNotes.style.overflowY = 'hidden';
     todoCheck.style.overflowY = 'hidden';
-
-    console.log('if');
   } else {
     todoFront.style.transform = 'rotateY(180deg)';
     todoBack.style.transform = 'rotateY(0deg)';
     todoNotes.style.overflowY = 'scroll';
     todoCheck.style.overflowY = 'scroll';
-
-    console.log('else');
-    console.log(todoFront.style.transform);
   }
 };
 
@@ -89,7 +79,6 @@ const checkOverdue = (element) => {
     isFuture(new Date(overdue[2], overdue[1] - 1, overdue[0])) === false &&
     element.complete === false
   ) {
-    // document.getElementById(`todo-card-$${element.id}`).insertAdjacentHTML('afterbegin', overdueHtml);
     document.getElementById(`btn__label-$${element.id}`).textContent =
       'OverDue';
     document
