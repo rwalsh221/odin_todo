@@ -103,8 +103,7 @@ const checkOverdueSidebar = (element) => {
   ) {
     isOverdue = true;
   }
-  console.log(isOverdue);
-  console.log('overduesidebar');
+
   return isOverdue;
 };
 
