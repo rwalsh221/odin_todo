@@ -1,5 +1,5 @@
 import { todoFactory } from './factory';
-import { newDate, removeChild } from './utilities';
+import { removeChild } from './utilities';
 import { todoArr, setLocalStorage } from './data';
 import { render } from './render';
 
@@ -9,17 +9,16 @@ import { render } from './render';
 // let todoArr = []
 
 const submitForm = () => {
-  let title, description, dueDate, priority, notes, checkList, project, JSDate;
-
   const radioChild = document.getElementById('form__radio');
   const newProject = document.getElementById('todo-form__new');
 
-  title = document.getElementById('todo-form__title').value;
-  description = document.getElementById('todo-form__description').value;
-  dueDate = document.getElementById('todo-form__due-date').value;
-  priority = 4;
-  notes = document.getElementById('todo-form__notes').value;
-  checkList = document.getElementById('checklist');
+  const title = document.getElementById('todo-form__title').value;
+  const description = document.getElementById('todo-form__description').value;
+  const dueDate = document.getElementById('todo-form__due-date').value;
+  const priority = 4;
+  const notes = document.getElementById('todo-form__notes').value;
+  const checkList = document.getElementById('checklist');
+  let project;
 
   if (newProject.checked === true) {
     project = document
@@ -41,8 +40,8 @@ const submitForm = () => {
       priority,
       notes,
       checkList,
-      project
-    )
+      project,
+    ),
   );
   removeChild('section-todo');
 
@@ -57,17 +56,14 @@ const addStep = (validate) => {
   const newP = document.createElement('p');
 
   if (validate === true) {
-    console.log(validate);
     newStep = 'This ToDo does not contain any additional steps';
   }
 
   const newContent = document.createTextNode(newStep);
-  console.log(newStep);
+
   newP.appendChild(newContent);
 
   element.insertAdjacentElement('beforeend', newP);
-
-  console.log(element.childNodes[0].value);
 };
 
 const closeForm = () => {
