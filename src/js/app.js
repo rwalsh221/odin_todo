@@ -2,13 +2,13 @@
 
 import '../scss/main.scss';
 
-import { collapseTodo, rotateTodo } from './js/todo_card';
+import { rotateTodo } from './js/todo_card';
 import {
   render,
   renderProjectTodoCard,
   renderDueSoonTodocard,
 } from './js/render';
-import { submitForm, addStep } from './js/todo_form';
+import { addStep } from './js/todo_form';
 import removeTodo from './js/delete';
 import completeTodo from './js/complete';
 import { nextPage, prevPage } from './js/pagination';
