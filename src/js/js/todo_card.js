@@ -9,10 +9,10 @@ const collapseTodo = (event) => {
   if (newCardId.eventClass.includes('btn__collapse')) {
     const todoNotes = document.getElementById(`notes-$${newCardId.cardId}`);
     const todoChecklist = document.getElementById(
-      `checklist-$${newCardId.cardId}`
+      `checklist-$${newCardId.cardId}`,
     );
     const todoBTN = document.getElementById(
-      `btn__collapse-$${newCardId.cardId}`
+      `btn__collapse-$${newCardId.cardId}`,
     );
     const todoCard = document.getElementById(newCardId.eventId);
 
@@ -38,10 +38,10 @@ const rotateTodo = (event) => {
   const newCardId = cardIdFactory(event);
   console.log(newCardId);
   const todoFront = document.getElementById(
-    `todo-card__front-$${newCardId.cardId}`
+    `todo-card__front-$${newCardId.cardId}`,
   );
   const todoBack = document.getElementById(
-    `todo-card__back-$${newCardId.cardId}`
+    `todo-card__back-$${newCardId.cardId}`,
   );
   const todoNotes = document.getElementById(`notes-$${newCardId.cardId}`);
   const todoCheck = document.getElementById(`checklist-$${newCardId.cardId}`);

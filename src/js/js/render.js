@@ -1,16 +1,6 @@
-import compareAsc from 'date-fns/compareAsc';
-import format from 'date-fns/format';
-import {
-  sortArray,
-  parseNumArr,
-  newDate,
-  getProject,
-  removeChild,
-} from './utilities.js';
-import isFuture from 'date-fns/isFuture';
+import { sortArray, getProject, removeChild } from './utilities.js';
 import { todoArr } from './data';
 import { changePage } from './pagination';
-import { cardIdFactory } from './factory';
 import { checkComplete, checkOverdue } from './todo_card.js';
 
 const renderTodoCard = (element) => {
@@ -35,7 +25,7 @@ const renderTodoCard = (element) => {
                         </div>`;
 
   // 2, RENDER TODO CARD CHECKLIST
-  let checklistHtml = renderChecklist(element);
+  const checklistHtml = renderChecklist(element);
 
   // 3, INSERT HTML FOR TODO CARD
   document
@@ -59,9 +49,9 @@ const renderTodoCard = (element) => {
 const renderChecklist = (element) => {
   let checklistHtml;
   if (element.checklist.length > 0) {
-    let htmlArray = [];
+    const htmlArray = [];
     // push checklist steps into html array from todo object
-    for (let i = 0; i < element.checklist.length; i++) {
+    for (let i = 0; i < element.checklist.length; i += 1) {
       htmlArray.splice(
         1,
         0,
@@ -76,16 +66,14 @@ const renderChecklist = (element) => {
 
 // render changes to todo form if a new project is added
 const renderTodoForm = () => {
-  let htmlArray = [
+  const htmlArray = [
     '<p>Please select your project:</p>',
-    `<input type="radio" id="todo-form__default" name="project" value="Default" checked>`,
+    '<input type="radio" id="todo-form__default" name="project" value="Default" checked>',
     '<label for="todo-form__default">DEFAULT</label>',
   ];
 
-  let projectArr = getProject(todoArr);
-  for (let i = 0; i < projectArr.length; i++) {
-    console.log('=====================');
-    console.log(projectArr[i]);
+  const projectArr = getProject(todoArr);
+  for (let i = 0; i < projectArr.length; i += 1) {
     if (projectArr[i] !== 'DEFAULT') {
       htmlArray.splice(
         3,
@@ -96,7 +84,7 @@ const renderTodoForm = () => {
     }
   }
 
-  let formHtml = htmlArray.join('');
+  const formHtml = htmlArray.join('');
   document
     .getElementById('form__radio')
     .insertAdjacentHTML('beforeend', formHtml);
@@ -104,18 +92,15 @@ const renderTodoForm = () => {
 
 const renderFooter = (arr) => {
   // 1 Set Variables
-  let projectArr = arr.reverse();
-  console.log('renderfooter');
-  console.log(arr);
-  let headingContent;
+  const projectArr = arr.reverse();
   const projectDOM = document.getElementById('project-container');
 
   // create new elements inside for loop otherwise same element will be append over and over.
-  for (let i = 0; i < projectArr.length; i++) {
+  for (let i = 0; i < projectArr.length; i += 1) {
     // 2 Create elements
-    let projectDiv = document.createElement('div');
-    let headingContent = document.createTextNode(`${projectArr[i]}`);
-    let projectHeading = document.createElement('h5');
+    const projectDiv = document.createElement('div');
+    const headingContent = document.createTextNode(`${projectArr[i]}`);
+    const projectHeading = document.createElement('h5');
     // 3 add classlist to new elements
     projectDiv.classList.add('project-container__card');
     projectHeading.classList.add('heading-quinary');
@@ -134,13 +119,13 @@ const renderFooter = (arr) => {
 const renderSidebar = () => {
   // NEED TO REMOVE TODO THAT ARE COMPLETE foreach push if complete === fales
   const DOMSidebar = document.getElementById('sidebar-bottom');
-  let sidebarArr = todoArr;
-  let sidebarTitleHtml = `<h4 class="heading-quaternary heading-sidebar">Due Soon</h4>`;
+  const sidebarArr = todoArr;
+  const sidebarTitleHtml =
+    '<h4 class="heading-quaternary heading-sidebar">Due Soon</h4>';
 
   const render = (arr) => {
-    for (let i = 0; i < arr.length; i++) {
-      console.log('render sidebar');
-      let sidebarHtml = ` <div id="sidebar-card-$${arr[i].id}" class="sidebar-card">
+    for (let i = 0; i < arr.length; i += 1) {
+      const sidebarHtml = ` <div id="sidebar-card-$${arr[i].id}" class="sidebar-card">
                                 <h4 class="heading-quaternary sidebar-card__heading" id="sidebar-card__heading-$${arr[i].id}">${arr[i].title}</h4>
                                 <h4 class="heading-quaternary sidebar-card__date" id="sidebar-card__date-$${arr[i].id}">${arr[i].dueDate}</h4>
                             </div>`;
@@ -158,29 +143,21 @@ const renderSidebar = () => {
 };
 
 const renderProjectTodoCard = (project) => {
-  console.log(project + 'dhksfjhdsjkhsjkdfhjkshfkjdhs');
   if (project === 'ALL PROJECTS') {
-    console.log('all projects if');
-    console.log(render);
     removeChild('section-todo');
-    console.log('removed');
-    console.log(todoArr);
     render();
     return;
   }
 
-  let projectArr = [];
-  todoArr.forEach((element, index) => {
-    console.log(typeof project);
-    console.log(typeof element.project);
+  const projectArr = [];
+  todoArr.forEach((element) => {
     if (element.project === project) {
-      console.log(true);
       projectArr.push(element);
     }
 
     removeChild('section-todo');
 
-    for (let i = 0; i < projectArr.length; i++) {
+    for (let i = 0; i < projectArr.length; i += 1) {
       renderTodoCard(projectArr[i]);
     }
   });
@@ -188,7 +165,6 @@ const renderProjectTodoCard = (project) => {
 
 const renderDueSoonTodocard = (event) => {
   const eventId = event.target.id;
-  console.log(eventId);
   const splitEventId = eventId.split('$');
 
   todoArr.forEach((element) => {
@@ -202,29 +178,23 @@ const renderDueSoonTodocard = (event) => {
 const render = () => {
   // sorts array by date and then priority to display on ui
 
-  console.log(todoArr);
   if (todoArr.length >= 1) {
     sortArray(todoArr);
   }
 
-  console.log('renderrrrrrrrrrrr');
-  console.log(sortArray(todoArr));
-  console.log('afetrsort');
   // removeChild('section-todo')
   // removeChild('form__radio')
 
-  for (let i = 0; i < todoArr.length; i++) {
+  for (let i = 0; i < todoArr.length; i += 1) {
     renderTodoCard(todoArr[i]);
   }
-  // todoArr.forEach(renderTodoCard);
+
   removeChild('form__radio');
   renderTodoForm();
   removeChild('project-container');
-  // renderFooter();
   changePage(1);
   removeChild('sidebar-bottom');
   renderSidebar();
-  // console.log(todoObjectArr)
 };
 
 export { render, renderFooter, renderProjectTodoCard, renderDueSoonTodocard };
