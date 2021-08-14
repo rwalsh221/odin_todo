@@ -78,6 +78,10 @@
   margin-bottom: 3.8rem;
 }
 
+.sidebar-overdue {
+  background-color: red;
+}
+
 @media screen and (max-width: $ipadProVertical) {
   .sidebar {
     padding: 2rem;

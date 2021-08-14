@@ -1,7 +1,11 @@
 import { sortArray, getProject, removeChild } from './utilities.js';
 import { todoArr } from './data';
 import { changePage } from './pagination';
-import { checkComplete, checkOverdue } from './todo_card.js';
+import {
+  checkComplete,
+  checkOverdue,
+  checkOverdueSidebar,
+} from './todo_card.js';
 
 const renderTodoCard = (element) => {
   // 1, HTML SKELETON FOR TODO CARD
@@ -119,13 +123,26 @@ const renderFooter = (arr) => {
 const renderSidebar = () => {
   // NEED TO REMOVE TODO THAT ARE COMPLETE foreach push if complete === fales
   const DOMSidebar = document.getElementById('sidebar-bottom');
-  const sidebarArr = todoArr;
+  const sidebarArr = [];
+
   const sidebarTitleHtml =
     '<h4 class="heading-quaternary heading-sidebar">Due Soon</h4>';
 
+  // REMOVE COMPLETE TODO FROM SIDEBAR
+  todoArr.forEach((element) => {
+    if (element.complete !== true) {
+      sidebarArr.push(element);
+    }
+  });
+
   const render = (arr) => {
     for (let i = 0; i < arr.length; i += 1) {
-      const sidebarHtml = ` <div id="sidebar-card-$${arr[i].id}" class="sidebar-card sidebar-card__click">
+      // ADD OVERDUE CLASS TO SIDEBAR CARD IF TODO IS OVERDUE
+      let overdueClass = '';
+      if (checkOverdueSidebar(arr[i]) === true) {
+        overdueClass = 'sidebar-overdue';
+      }
+      const sidebarHtml = ` <div id="sidebar-card-$${arr[i].id}" class="sidebar-card sidebar-card__click ${overdueClass}">
                                 <h4 class="heading-quaternary sidebar-card__heading sidebar-card__click" id="sidebar-card__heading-$${arr[i].id}">${arr[i].title}</h4>
                                 <h4 class="heading-quaternary sidebar-card__date sidebar-card__click" id="sidebar-card__date-$${arr[i].id}">${arr[i].dueDate}</h4>
                             </div>`;

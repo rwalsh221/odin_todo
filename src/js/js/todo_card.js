@@ -90,4 +90,28 @@ const checkOverdue = (element) => {
   }
 };
 
-export { rotateTodo, collapseTodo, checkComplete, checkOverdue };
+const checkOverdueSidebar = (element) => {
+  const dateArr = element.dueDate.split('/');
+
+  const overdue = parseNumArr(dateArr);
+
+  let isOverdue = false;
+
+  if (
+    isFuture(new Date(overdue[2], overdue[1] - 1, overdue[0])) === false &&
+    element.complete === false
+  ) {
+    isOverdue = true;
+  }
+  console.log(isOverdue);
+  console.log('overduesidebar');
+  return isOverdue;
+};
+
+export {
+  rotateTodo,
+  collapseTodo,
+  checkComplete,
+  checkOverdue,
+  checkOverdueSidebar,
+};
