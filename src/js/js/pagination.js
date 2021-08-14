@@ -17,29 +17,29 @@ const elPerPage = 4;
 
 const prevPage = () => {
   if (currentPage > 1) {
-    currentPage--;
+    currentPage -= 1;
     changePage(currentPage);
   }
 };
 
 const nextPage = () => {
   if (currentPage < numPages()) {
-    currentPage++;
+    currentPage += 1;
     changePage(currentPage);
   }
 };
 
-const changePage = (page) => {
+const changePage = (pageParameter) => {
+  let page = pageParameter;
   let projectArray = getProject(todoArr);
   if (projectArray.length >= 1) projectArray.push('ALL PROJECTS');
-  console.log(projectArray);
-  let defaultIndex = projectArray.indexOf('DEFAULT');
-  let allProjectsIndex = projectArray.indexOf('ALL PROJECTS');
-  console.log(defaultIndex);
+
+  const defaultIndex = projectArray.indexOf('DEFAULT');
+  const allProjectsIndex = projectArray.indexOf('ALL PROJECTS');
+
   projectArray = arrayMove(projectArray, defaultIndex, 0);
   projectArray = arrayMove(projectArray, allProjectsIndex, 0);
 
-  console.log(projectArray);
   const btnNext = document.getElementById('icon-advance');
   const btnPrev = document.getElementById('icon-return');
   let elementArray = [];
@@ -51,11 +51,11 @@ const changePage = (page) => {
   // Validate page
   if (page < 1) page = 1;
 
-  if (page != 1 && page > numPages()) page = numPages();
+  if (page !== 1 && page > numPages()) page = numPages();
 
   if (projectArray.length > elPerPage) {
-    let startSlice = (page - 1) * elPerPage;
-    let endSlice = page * elPerPage;
+    const startSlice = (page - 1) * elPerPage;
+    const endSlice = page * elPerPage;
     elementArray = projectArray.slice(startSlice, endSlice);
     renderFooter(elementArray);
   } else {
@@ -64,22 +64,18 @@ const changePage = (page) => {
   }
 
   if (page === 1) {
-    console.log('hidden');
     btnPrev.style.visibility = 'hidden';
   } else {
-    console.log('nothiddne');
     btnPrev.style.visibility = 'visible';
   }
 
-  if (page == numPages()) {
+  if (page === numPages()) {
     btnNext.style.visibility = 'hidden';
   } else if (projectArray.length > 4) {
     btnNext.style.visibility = 'visible';
   }
 };
 
-const numPages = () => {
-  return Math.ceil(todoArr.length / elPerPage);
-};
+const numPages = () => Math.ceil(todoArr.length / elPerPage);
 
 export { changePage, prevPage, nextPage };

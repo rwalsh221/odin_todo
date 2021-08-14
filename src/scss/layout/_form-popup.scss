@@ -79,3 +79,15 @@
   color: $color-primary;
   display: none;
 }
+
+@media screen and (max-width: $ipadVertical) {
+  .form-popup {
+    &__form {
+      display: block;
+      top: -5rem;
+    }
+
+    &__background {
+    }
+  }
+}

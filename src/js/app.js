@@ -9,8 +9,8 @@ import {
   renderDueSoonTodocard,
 } from './js/render';
 import { submitForm, addStep } from './js/todo_form';
-import { removeTodo } from './js/delete';
-import { completeTodo } from './js/complete';
+import removeTodo from './js/delete';
+import completeTodo from './js/complete';
 import { nextPage, prevPage } from './js/pagination';
 import { removeChild } from './js/utilities';
 import validateForm from './js/validation';

@@ -65,7 +65,7 @@ const renderChecklist = (element) => {
       htmlArray.splice(
         1,
         0,
-        `<li class="todo-card__checklist--item">${element.checklist[i].step}</li>`
+        `<li class="todo-card__checklist--item">${element.checklist[i].step}</li>`,
       );
     }
     // convert htmlArray to string
@@ -91,7 +91,7 @@ const renderTodoForm = () => {
         3,
         0,
         `<input type="radio" id="todo-form__${projectArr[i]}" name="project" value="${projectArr[i]}">`,
-        `<label for="todo-form__${projectArr[i]}">${projectArr[i]}</label><br></br>`
+        `<label for="todo-form__${projectArr[i]}">${projectArr[i]}</label><br></br>`,
       );
     }
   }
@@ -124,7 +124,7 @@ const renderFooter = (arr) => {
     projectHeading.appendChild(headingContent);
     projectHeading.setAttribute(
       'id',
-      `footer-card__heading-$${projectArr[i].toLowerCase()}`
+      `footer-card__heading-$${projectArr[i].toLowerCase()}`,
     );
     projectDiv.appendChild(projectHeading);
     projectDOM.insertBefore(projectDiv, projectDOM.childNodes[0]);

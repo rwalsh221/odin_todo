@@ -18,4 +18,4 @@ const completeTodo = (e) => {
   render();
 };
 
-export { completeTodo };
+export default completeTodo;
