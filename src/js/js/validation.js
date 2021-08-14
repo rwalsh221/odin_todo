@@ -12,7 +12,7 @@ const domStrings = {
   todoNewProjectInput: document.getElementById('todo-form__new--text'),
   validationWarning: document.getElementById('validation-warning'),
   validationWarningContent: document.getElementById(
-    'validation-warning__content'
+    'validation-warning__content',
   ),
 };
 
