@@ -1,6 +1,5 @@
 import { sortArray, getProject, removeChild } from './utilities.js';
 import { todoArr } from './data';
-import { changePage } from './pagination';
 import {
   checkComplete,
   checkOverdue,
@@ -209,7 +208,6 @@ const render = () => {
   removeChild('form__radio');
   renderTodoForm();
   removeChild('project-container');
-  changePage(1);
   removeChild('sidebar-bottom');
   renderSidebar();
 };

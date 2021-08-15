@@ -7,17 +7,25 @@ import {
   render,
   renderProjectTodoCard,
   renderDueSoonTodocard,
+  renderFooter,
 } from './js/render';
 import { addStep } from './js/todo_form';
 import removeTodo from './js/delete';
 import completeTodo from './js/complete';
-import { nextPage, prevPage } from './js/pagination';
+import {
+  nextPage,
+  prevPage,
+  changePage,
+  getProjectArray,
+} from './js/pagination';
 import { removeChild } from './js/utilities';
 import validateForm from './js/validation';
 import { retrieveLocalStorage } from './js/data';
 
+// INIT RENDER ON PAGE LOAD
 retrieveLocalStorage();
 render();
+renderFooter(changePage());
 
 const sectionTodo = document.getElementById('section-todo');
 const sectionFooter = document.getElementById('footer-content');
@@ -74,9 +82,11 @@ todoForm.addEventListener('click', function (e) {
 
 nextPageBtn.addEventListener('click', function () {
   removeChild('project-container');
-  nextPage();
+  nextPage(getProjectArray());
+  renderFooter(changePage());
 });
 prevPageBtn.addEventListener('click', function () {
   removeChild('project-container');
   prevPage();
+  renderFooter(changePage());
 });

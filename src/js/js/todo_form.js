@@ -1,7 +1,8 @@
 import { todoFactory } from './factory';
 import { removeChild } from './utilities';
 import { todoArr, setLocalStorage } from './data';
-import { render } from './render';
+import { render, renderFooter } from './render';
+import { changePage } from './pagination';
 
 // let todoArr = [{id: '1111', title: 'test', description: 'this is the first todo', dueDate: newDate(2019, 11, 2), priority: 4, notes: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus incidunt', complete: true, completeDate: newDate(2019, 11, 8)},
 // {id: '1112', title: 'second Todo', description: 'this is the second todo', dueDate: newDate(2020, 11, 8), priority: 5, notes: 'inventore exercitationem ipsam tenetur veniam natus repellat nemo cupiditate!',  complete: false},
@@ -47,6 +48,7 @@ const submitForm = () => {
 
   setLocalStorage();
   render();
+  renderFooter(changePage());
 };
 
 const addStep = (validate) => {

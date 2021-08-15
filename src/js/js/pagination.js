@@ -1,6 +1,5 @@
 import { arrayMoveImmutable } from 'array-move';
 import { todoArr } from './data';
-import { renderFooter } from './render';
 import { getProject } from './utilities';
 
 // const arrayMove = require('array-move');
@@ -15,6 +14,10 @@ const arrayMove = arrayMoveImmutable;
 let currentPage = 1;
 const elPerPage = 4;
 
+const resetFooterPage = () => {
+  changePage(1);
+};
+
 const prevPage = () => {
   if (currentPage > 1) {
     currentPage -= 1;
@@ -22,16 +25,17 @@ const prevPage = () => {
   }
 };
 
-const nextPage = () => {
-  if (currentPage < numPages()) {
+const nextPage = (arr) => {
+  if (currentPage < numPages(arr)) {
     currentPage += 1;
     changePage(currentPage);
   }
 };
 
-const changePage = (pageParameter) => {
-  let page = pageParameter;
+// GET ALL PROJECTS FROM TODO ARRAY
+const getProjectArray = () => {
   let projectArray = getProject(todoArr);
+
   if (projectArray.length >= 1) projectArray.push('ALL PROJECTS');
 
   const defaultIndex = projectArray.indexOf('DEFAULT');
@@ -39,6 +43,13 @@ const changePage = (pageParameter) => {
 
   projectArray = arrayMove(projectArray, defaultIndex, 0);
   projectArray = arrayMove(projectArray, allProjectsIndex, 0);
+
+  return projectArray;
+};
+
+const changePage = () => {
+  let page = currentPage;
+  const projectArray = getProjectArray();
 
   const btnNext = document.getElementById('icon-advance');
   const btnPrev = document.getElementById('icon-return');
@@ -51,16 +62,16 @@ const changePage = (pageParameter) => {
   // Validate page
   if (page < 1) page = 1;
 
-  if (page !== 1 && page > numPages()) page = numPages();
+  if (page !== 1 && page > numPages(projectArray)) {
+    page = numPages(projectArray);
+  }
 
   if (projectArray.length > elPerPage) {
     const startSlice = (page - 1) * elPerPage;
     const endSlice = page * elPerPage;
     elementArray = projectArray.slice(startSlice, endSlice);
-    renderFooter(elementArray);
   } else {
     elementArray = projectArray.slice(0, 4);
-    renderFooter(elementArray);
   }
 
   if (page === 1) {
@@ -69,13 +80,15 @@ const changePage = (pageParameter) => {
     btnPrev.style.visibility = 'visible';
   }
 
-  if (page === numPages()) {
+  if (page === numPages(projectArray)) {
     btnNext.style.visibility = 'hidden';
   } else if (projectArray.length > 4) {
     btnNext.style.visibility = 'visible';
   }
+
+  return elementArray;
 };
 
-const numPages = () => Math.ceil(todoArr.length / elPerPage);
+const numPages = (arr) => Math.ceil(arr.length / elPerPage);
 
-export { changePage, prevPage, nextPage };
+export { changePage, prevPage, nextPage, resetFooterPage, getProjectArray };
