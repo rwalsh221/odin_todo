@@ -23,7 +23,7 @@ const renderTodoCard = (element) => {
                                 <p class="todo-card__back--notes" id="notes-$${element.id}">${element.notes}</p>
                                 <h4 class="todo-card__back--checklist-heading heading-quaternary">Checklist</h4>
                                 <ul class="todo-card__back--checklist" id="checklist-$${element.id}"></ul>
-                                <button id="btn__back-$1111" class="btn todo-card__back--btn">todo</button>
+                                <button class="btn todo-card__back--btn">todo</button>
                             </div>
                         </div>`;
 
@@ -125,7 +125,7 @@ const renderSidebar = () => {
   const sidebarArr = [];
 
   const sidebarTitleHtml =
-    '<h4 class="heading-quaternary heading-sidebar">Due Soon</h4>';
+    '<h2 class="heading-secondary heading-sidebar">Due Soon</h2>';
 
   // REMOVE COMPLETE TODO FROM SIDEBAR
   todoArr.forEach((element) => {
